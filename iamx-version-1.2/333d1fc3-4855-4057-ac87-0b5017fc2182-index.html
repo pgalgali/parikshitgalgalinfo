@@ -27,17 +27,16 @@
 </script>
 <script>
 function myFunction() {
- 
+    var voteable = null;
 	// The function returns the product of p1 and p2	
-	var voteable = sessionStorage.getItem("authenticated").value;
+	var voteable = sessionStorage.getItem('authenticated');
 	   alert(voteable);     
-	if (voteable.equals("true")){
+	if (voteable != null){
 	alert('authenticated')
 	}
 	else{
 		alert('false')
 	}
-
 }
 </script>
 	<title>Parikshit Gururaj Galgali</title>
