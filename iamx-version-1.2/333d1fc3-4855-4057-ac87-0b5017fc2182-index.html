@@ -28,12 +28,13 @@
 window.onload = myFunction;
 function myFunction() {
     var voteable = null;
+	// The function returns the product of p1 and p2	
    voteable = sessionStorage.getItem('authenticated');
-	if (voteable  === null ){
-		window.location.href = "https://pgalgali.github.io/parikshitgalgalinfo/iamx-version-1.2";
-
+	if (voteable != null){
+	window.location.href = "https://pgalgali.github.io/parikshitgalgalinfo/iamx-version-1.2/333d1fc3-4855-4057-ac87-0b5017fc2182-index.html";
 	}
 	else{
+	window.location.href = "https://pgalgali.github.io/parikshitgalgalinfo/iamx-version-1.2";
 	}
 }
 </script>
@@ -69,7 +70,7 @@ function myFunction() {
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </head>
 
-<body ">
+<body onload="myFunction()">
 	<!-- Preloader -->
 	<!-- 	<div id="tt-preloader">
 		<div id="pre-status">
