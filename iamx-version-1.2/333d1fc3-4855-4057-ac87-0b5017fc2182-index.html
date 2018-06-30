@@ -25,8 +25,9 @@
   gtag('config', 'UA-121073765-3');
 </script>
 <script>
-function myFunction() {
-    var voteable = null;
+window.onload = myFunction () {
+    if (! localStorage.justOnce) {
+	 var voteable = null;
 	// The function returns the product of p1 and p2	
    voteable = sessionStorage.getItem('authenticated');
 	if (voteable  === null){
@@ -34,7 +35,13 @@ function myFunction() {
 	}
 	else{
 	}
+        localStorage.setItem("justOnce", "true");
+        window.location.reload();
+    }
 }
+
+
+
 </script>
 	<title>Parikshit Gururaj Galgali</title>
 
@@ -68,7 +75,9 @@ function myFunction() {
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </head>
 
-<body onload="myFunction();">
+
+
+<body >
 	<!-- Preloader -->
 	<!-- 	<div id="tt-preloader">
 		<div id="pre-status">
