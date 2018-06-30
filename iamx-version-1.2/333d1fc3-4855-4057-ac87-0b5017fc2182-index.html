@@ -27,7 +27,18 @@
 </script>
 <script>
 function myFunction() {
-    alert('hi');              // The function returns the product of p1 and p2
+    alert('hi');     
+	// The function returns the product of p1 and p2
+	document.getElementById("result").innerHTML = sessionStorage.getItem("authenticated");
+	
+	var voteable = sessionStorage.getItem("authenticated");
+	if (voteable.equals("true")){
+	alert('authenticated')
+	}
+	else{
+		alert('false')
+	}
+
 }
 </script>
 	<title>Parikshit Gururaj Galgali</title>
