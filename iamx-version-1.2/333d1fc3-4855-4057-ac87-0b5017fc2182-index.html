@@ -29,7 +29,7 @@
 function myFunction() {
  
 	// The function returns the product of p1 and p2	
-	var voteable = sessionStorage.getItem("authenticated");
+	var voteable = sessionStorage.getItem("authenticated").value;
 	   alert(voteable);     
 	if (voteable.equals("true")){
 	alert('authenticated')
