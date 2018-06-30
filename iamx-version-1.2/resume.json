@@ -18,13 +18,17 @@
 			"name" : "this.source"
 		}
 	],
-	"skills" : [
-		"Eating",
-		"Sleeping",
-		"Bowling"
+	"WHAT I DO ?" : [
+		"Hands on experience and capable of guiding teams to execute projects to completion. •	Specialized in development of solutions using Industry recognized best practices and design principles. •	A project executor with skills in planning and executing various SDLC projects in compliance with quality standards, encapsulating Analysis, Detailed Design, Development and Testing",
+		"Specialist in Risk Mitigation strategies, and Project Planning & execution. •	Certified SCJP1.4® , SCWCD 5® •	Certified PMP®, PRINCE2® Foundation, ITIL® 2011 Foundation •	Certified FCTOP® (Financial certification for Technology Professionals) organized by stratadigm",
+		"	Specialist in Risk Mitigation strategies, and Project Planning & execution. •	Seasoned in the intricacies of Technical Handovers from Onsite to Offshore teams, having undergone the process several times in the past. •	Certified SCJP1.4® , SCWCD 5® •	Certified PMP®, PRINCE2® Foundation, ITIL® 2011 Foundation"
 	],
-	"frameworks" : [
-		"D'oh! What's a framework?"
+	"Expertise" : [
+		"Microservices Development",
+		"Enterprise Architecture",
+		"Product Design",
+		"Project Management",
+		"Agile / TDD / XP / Devops"	
 	],
 	"projects" : [
 		{
