@@ -29,11 +29,11 @@ window.onload = myFunction;
 function myFunction() {
     var voteable = null;
    voteable = sessionStorage.getItem('authenticated');
-	if (voteable != null){
-	window.location.href = "https://pgalgali.github.io/parikshitgalgalinfo/iamx-version-1.2/333d1fc3-4855-4057-ac87-0b5017fc2182-index.html";
+	if (voteable === null){
+		window.location.href = "https://pgalgali.github.io/parikshitgalgalinfo/iamx-version-1.2";
+
 	}
 	else{
-	window.location.href = "https://pgalgali.github.io/parikshitgalgalinfo/iamx-version-1.2";
 	}
 }
 </script>
