@@ -1,12 +1,12 @@
 {
-	"name" : "Parikshit G Galgali",
-	"contact" : "pgalgali@gmail.com",
-	"title" : "Microservices Developer",
-	"objective" : "Seeking an opportunity to leverage my professional experience and skills as a technical architect and willing to grow vertically in the Technology Vertical.",
-	"aboutme" : "Professional experience 12+ years in IT service delivery Development & Design, Project Management and Customer Management. Certified PMP®, PRINCE2® Foundation, ITIL® 2011 Foundation .Experience in Telecom domain  , Investment Banking , Retail and manufacturing and logistics domain.",
+	"name" : "Homer Jay Simpson",
+	"contact" : "chunkylover53@aol.com",
+	"title" : "Safety Inspector",
+	"objective" : "To be happy.",
+	"aboutme" : "I love beer, doughnuts, and all things fried.",
 	"social" : [
 		{
-			"link" : "https://www.linkedin.com/in/parikshitgalgali/",
+			"link" : "http://www.linkedin.com/in/homerjsimpson",
 			"name" : "LinkedIn"
 		},
 		{
@@ -14,21 +14,17 @@
 			"name" : "twitter"
 		},
 		{
-			"link" : "https://github.com/pgalgali/",
+			"link" : "https://github.com/bittersweetryan/jsonmue",
 			"name" : "this.source"
 		}
 	],
-	"WHAT I DO ?" : [
-		"Hands on experience and capable of guiding teams to execute projects to completion. •	Specialized in development of solutions using Industry recognized best practices and design principles. •	A project executor with skills in planning and executing various SDLC projects in compliance with quality standards, encapsulating Analysis, Detailed Design, Development and Testing",
-		"Specialist in Risk Mitigation strategies, and Project Planning & execution. •	Certified SCJP1.4® , SCWCD 5® •	Certified PMP®, PRINCE2® Foundation, ITIL® 2011 Foundation •	Certified FCTOP® (Financial certification for Technology Professionals) organized by stratadigm",
-		"	Specialist in Risk Mitigation strategies, and Project Planning & execution. •	Seasoned in the intricacies of Technical Handovers from Onsite to Offshore teams, having undergone the process several times in the past. •	Certified SCJP1.4® , SCWCD 5® •	Certified PMP®, PRINCE2® Foundation, ITIL® 2011 Foundation"
+	"skills" : [
+		"Eating",
+		"Sleeping",
+		"Bowling"
 	],
-	"Expertise" : [
-		"Microservices Development",
-		"Enterprise Architecture",
-		"Product Design",
-		"Project Management",
-		"Agile / TDD / XP / Devops"	
+	"frameworks" : [
+		"D'oh! What's a framework?"
 	],
 	"projects" : [
 		{
