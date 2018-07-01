@@ -1,71 +1,181 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Google Drive Download Link Generator</title>
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-<div id="page_content">
-  <h1>Google Drive Download Link Generator</h1>
-  <h2>By <a href="" title="Kompi Ajaib">KompiAjaib</a></h2>
-  <div class="container">
-    <div class="row">
-      <form>
-        <div class="form-group">
-        <h3>
-        <label for="driveID" class="example"><b>Google Drive ID example:</b>
-        </h3>
-        Google drive share link: <span class="ex-text">https://drive.google.com/file/d/</span><b>0Bz4YdwRI3rnCMFRoTmtSS0M1VHM</b><span class="ex-text">/view?usp=sharing</span></label>
-          <input type="text" class="form-control" id="driveID" placeholder="Put Google Drive ID Here" />
-        </div>
-      </form>
-      <div class="get">
-        <button class="btn btn-primary" id="get-button" type="submit" onclick='getLink()'>Get Link Download</button>
-      </div>
-
-      <div id="container">
-        <h3><b>Result:</b></h3>
-        <div id="link_container" data-toggle="tooltip" data-placement="top" title="Click then CTRL + C"></div>
-        <button type="button" class="btn btn-danger get-another" onClick="window.location.href=window.location.href">Get Another Link</button>
-      </div>
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <hr>
-        <div class="how-to">
-          <b>How to get Google drive share link:</b>
-          <br/>
-          <br/>
-          <p>Step 1: Go to <a href="https://drive.google.com/" target="_blank">Google Drive</a> and right click the file that you want to share. Then click on "Share...".</p>
-          <div style="clear: both; text-align: center;">
-            <img alt="thumb 1" src="img/Screenshot_1.jpg" width="600" height="575" />
-          </div>
-          <br/>
-          <br/>
-          <p>Step 2: On the window that comes up, click "Get shareable link".</p>
-          <div style="clear: both; text-align: center;">
-            <img alt="thumb 2" src="img/Screenshot_2.jpg" width="600" height="345" />
-          </div>
-          <br/>
-          <br/>
-          <p>Step 3: Make sure the dropdown is set to one of the "Anyone with the link..." or "Anyone on the internet..." options, then click "Copy link".</p>
-          <div style="clear: both; text-align: center;">
-            <img alt="thumb 3" src="img/Screenshot_3.jpg" width="600" height="485" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    Copyright &#169; <script>document.write((new Date()).getFullYear());</script> Google Drive Link Download Generator
-  </div>
-</div>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/download_link.js"></script>
-</body>
+  <head>
+    <!--
+    
+    In this example, I started with the 5-minute example provided by Google 
+    on the following page:
+    
+        https://developers.google.com/drive/
+        
+    I modified the example code, so that I could write the following 
+    Javascript object as a json string into a file called 
+    csusbdt-drive-example-app-state.txt.
+    
+        var appState = {
+          number: 12,
+          text: 'hello'
+        };
+    
+    -->
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <script type="text/javascript">    
+      var CLIENT_ID = '124753688845-fmtbtheaqhlalo7dgrvuqbhnf8dctkij.apps.googleusercontent.com';
+      var SCOPES = 'https://www.googleapis.com/auth/drive.readonly';
+      var IdRead;
+      /**
+       * Called when the client library is loaded to start the auth flow.
+       */
+      function handleClientLoad() {
+        window.setTimeout(checkAuth, 1);
+      }
+      /**
+       * Check if the current user has authorized the application.
+       */
+      function checkAuth() {
+        gapi.auth.authorize(
+            {'client_id': CLIENT_ID, 'scope': SCOPES, 'immediate': true},
+            handleAuthResult);
+      }
+      /**
+       * Called when authorization server replies.
+       *
+       * @param {Object} authResult Authorization result.
+       */
+      function handleAuthResult(authResult) {
+      	var accessToken = gapi.auth.getToken()
+      	console.log(accessToken);
+        var authButton = document.getElementById('authorizeButton');
+        var doitButton = document.getElementById('doitButton');
+        var listButton = document.getElementById('listButton');
+        var readButton = document.getElementById('readButton');
+        authButton.style.display = 'none';
+        doitButton.style.display = 'none';
+        listButton.style.display = 'none';
+        readButton.style.display = 'none';
+        if (authResult && !authResult.error) {
+          // Access token has been successfully retrieved, requests can be sent to the API.
+          listButton.style.display = 'block';
+          doitButton.style.display = 'block';
+          readButton.style.display = 'block';
+          doitButton.onclick = uploadFile; 
+          listButton.onclick = loadDriveApi;
+          readButton.onclick = downloadFile;
+        } else {
+          // No access token could be retrieved, show the button to start the authorization flow.
+          authButton.style.display = 'block';
+          authButton.onclick = function() {
+              gapi.auth.authorize(
+                  {'client_id': CLIENT_ID, 'scope': SCOPES, 'immediate': false},
+                  handleAuthResult);
+          };
+        }
+      }
+      /**
+       * Start the file upload.
+       *
+       * @param {Object} evt Arguments from the file selector.
+       */
+      function uploadFile(evt) {
+        gapi.client.load('drive', 'v2', function() {
+          insertFile();
+        });
+      }
+      /**
+       * Insert new file.
+       */
+      function insertFile() {
+ 
+        var appState = {
+          number: 12,
+          text: 'hello'
+        }; 
+        
+        var request = gapi.client.request({
+            'path': '/upload/drive/v2/files',
+            'method': 'POST',
+            'params': {'uploadType': 'media'},
+            'headers': {
+              'Content-Type': 'application/json'
+            },
+            'body': JSON.stringify(appState)});
+        request.execute(function(res) {
+          console.log(res);
+          //Rename file 
+          var body = {'title': "test1.json"};
+				  var request = gapi.client.drive.files.patch({
+				    'fileId': res.id,
+				    'resource': body
+				  });
+				  request.execute(function(resp) {
+				    console.log('New Title: ' + resp.title);
+				  });
+        });
+      }
+     function loadDriveApi() {
+        gapi.client.load('drive', 'v2', listFiles);
+      }
+      /**
+       * Print files.
+       */
+      function listFiles() {
+        var request = gapi.client.drive.files.list({
+            'maxResults': 10
+          });
+          request.execute(function(resp) {
+            appendPre('Files:');
+            var files = resp.items;
+            if (files && files.length > 0) {
+              for (var i = 0; i < files.length; i++) {
+                IdRead = files[0].id;
+                var file = files[i];
+                appendPre(file.title + ' (' + file.id + ')');
+              }
+            } else {
+              appendPre('No files found.');
+            }
+          });
+      }
+      function downloadFile(evt) {
+      	var path = "/drive/v2/files/" + IdRead
+        var restRequest = gapi.client.request({
+          'path': path,
+          'method': 'GET',
+          'params' : {'alt': 'media'}
+        });
+        restRequest.then(function(resp) {
+				  console.log(resp.result);
+				}, function(reason) {
+				  console.log('Error: ' + reason.result.error.message);
+				});
+      }
+      function readFile(id) {
+        var request = gapi.client.drive.files.get({
+          'fileId': id,
+          'alt': 'media'
+        });
+        request.execute(function(resp) {
+          console.log(resp);
+        });
+      }
+      /**
+       * Append a pre element to the body containing the given message
+       * as its text node.
+       *
+       * @param {string} message Text to be placed in pre element.
+       */
+      function appendPre(message) {
+        var pre = document.getElementById('output');
+        var textContent = document.createTextNode(message + '\n');
+        pre.appendChild(textContent);
+      }
+    </script>
+    <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+  </head>
+  <body>
+    <input type="button" id="listButton"      style="display: none" value="Get file list"  onclick="alert('hiiii')" /> <br>
+    <input type="button" id="readButton"      style="display: none" value="Read file"  onclick="alert('hiiii')" /> <br>
+    <input type="button" id="doitButton"      style="display: none" value="Insert file"  onclick="alert('hiiii')" /> <br>
+    <input type="button" id="authorizeButton" style="display: none" value="Authorize" />
+    <pre id="output"></pre>
+  </body>
 </html>
