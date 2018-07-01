@@ -1,75 +1,13 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <script src="Scripts/main.js" type="text/javascript"></script>
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
-    <link type="text/css" rel="stylesheet" href="style.css" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Polymer Drive Viewer</title>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="elements/drive-viewer.html">
   </head>
   <body>
-    <div id="authorize-div"; font-size: 500%;position: fixed; left:12%; ">
-      <span>Authorize access to Drive API</span>
-      <br>
-      <br>
-      <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-button" onclick="handleAuthClick(event)" style="font-size: 120%; margin:auto; display:block;">
-        Click me !
-      </button>
-
-    </div>
-    <div id="body-div">
-    <div><h1>Files</h1></div>
-
-    <div id="output"></div>
-    <br>
-
-    <br>
-    <fieldset align="center" readonly>
-    <img id="trash" src="icons/1460726016_f-cross_256.svg" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-<legend> Drag a file and drop it on this symbol to delete it !</legend>
-</fieldset>
-
-
-    <table class="tg">
-  <tr>
-    <th class="tg-yw4l"> </th>
-
-    <th class="tg-9hbo"></th>
-  </tr>
-  <tr>
-    <td class="tg-9hbo"> </td>
- <button id="authorize-button" onclick="handleAuthClick(event)" style="font-size: 120%; margin:auto; display:block;">
-        Click me !
-      </button>
-    <td class="tg-yw4l"></td>
-  </tr>
-  <tr>
-    <td class="tg-9hbo"><button onclick="deleteFile()"> Delete </button></td>
-    <td class="tg-yw4l">Select a File and click here to delete it !</td>
-  </tr>
-  <tr>
-    <td class="tg-9hbo"><button onclick="copyFile()"> Copy </button></td>
-    <td class="tg-yw4l">Select a file and click here to duplicate it !</td>
-  </tr>
-  <tr>
-    <td class="tg-9hbo"><button onclick="downloadFile()"> Download </button></td>
-    <td class="tg-yw4l">Select a file and click here to download it ! </td>
-  </tr>
-  <tr>
-    <td class="tg-9hbo"><button onclick="viewFile()"> View File </button></td>
-    <td class="tg-yw4l">Click here to view a File in Google Drive View</td>
-  </tr>
-    <tr>
-    <td class="tg-9hbo"><button onclick="listFiles()">Maximum files to show</button></td>
-    <td class="tg-yw4l"><input type="number" id="nr-of-files" value="10"></td>
-  </tr>
-</table>
-
-<br>
-<br>
-<br><br>
-    <input type="hidden" id="file_id">
-    <input type="hidden" id="file_name">
-
-</div>
+    <drive-viewer client-id="124753688845-fmtbtheaqhlalo7dgrvuqbhnf8dctkij.apps.googleusercontent.com"></drive-viewer>
   </body>
 </html>
