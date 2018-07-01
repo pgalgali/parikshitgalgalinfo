@@ -1,33 +1,88 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @pgalgali Sign out
+2
+1 7 KompiAjaib/download-link-generator
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+download-link-generator/index.html
+bf4e7d9  on Jun 3, 2016
+@KompiAjaib KompiAjaib Create index.html
+     
+72 lines (68 sloc)  3.17 KB
+<!DOCTYPE html>
 <html>
-	<head>
-		
-	</head>
-	<body>
-		<form>
-			<input id="gdrive_file" type="text"> <a href="#" id="gdrive_file_selector">Select file</a><br/>
-			<input id="gdrive_folder" type="text"> <a href="#" id="gdrive_folder_selector">Select folder</a><br/>
-		</form>
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="//apis.google.com/js/client.js"></script>
-		<script type="text/javascript" src="../jquery-gdrive.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$().gdrive('init', {
-					'devkey': 'EW1bQTNF05euXDmrUdQz1mJF',
-					'appid': '124753688845-fmtbtheaqhlalo7dgrvuqbhnf8dctkij.apps.googleusercontent.com'
-				});
-				
-				$('#gdrive_file').gdrive('set', {
-					'trigger': 'gdrive_file_selector', 
-					'header': 'Select a file', 
-					'filter': ''
-				});
-				$('#gdrive_folder').gdrive('set', {
-					'trigger': 'gdrive_folder_selector', 
-					'header': 'Select a folder', 
-					'filter': 'application/vnd.google-apps.folder'
-				});
-			});
-		</script>
-	</body>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Drive Download Link Generator</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="page_content">
+  <h1>Google Drive Download Link Generator</h1>
+  <h2>By <a href="" title="Kompi Ajaib">KompiAjaib</a></h2>
+  <div class="container">
+    <div class="row">
+      <form>
+        <div class="form-group">
+        <h3>
+        <label for="driveID" class="example"><b>Google Drive ID example:</b>
+        </h3>
+        Google drive share link: <span class="ex-text">https://drive.google.com/file/d/</span><b>0Bz4YdwRI3rnCMFRoTmtSS0M1VHM</b><span class="ex-text">/view?usp=sharing</span></label>
+          <input type="text" class="form-control" id="driveID" placeholder="Put Google Drive ID Here" />
+        </div>
+      </form>
+      <div class="get">
+        <button class="btn btn-primary" id="get-button" type="submit" onclick='getLink()'>Get Link Download</button>
+      </div>
+
+      <div id="container">
+        <h3><b>Result:</b></h3>
+        <div id="link_container" data-toggle="tooltip" data-placement="top" title="Click then CTRL + C"></div>
+        <button type="button" class="btn btn-danger get-another" onClick="window.location.href=window.location.href">Get Another Link</button>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <hr>
+        <div class="how-to">
+          <b>How to get Google drive share link:</b>
+          <br/>
+          <br/>
+          <p>Step 1: Go to <a href="https://drive.google.com/" target="_blank">Google Drive</a> and right click the file that you want to share. Then click on "Share...".</p>
+          <div style="clear: both; text-align: center;">
+            <img alt="thumb 1" src="img/Screenshot_1.jpg" width="600" height="575" />
+          </div>
+          <br/>
+          <br/>
+          <p>Step 2: On the window that comes up, click "Get shareable link".</p>
+          <div style="clear: both; text-align: center;">
+            <img alt="thumb 2" src="img/Screenshot_2.jpg" width="600" height="345" />
+          </div>
+          <br/>
+          <br/>
+          <p>Step 3: Make sure the dropdown is set to one of the "Anyone with the link..." or "Anyone on the internet..." options, then click "Copy link".</p>
+          <div style="clear: both; text-align: center;">
+            <img alt="thumb 3" src="img/Screenshot_3.jpg" width="600" height="485" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Copyright &#169; <script>document.write((new Date()).getFullYear());</script> Google Drive Link Download Generator
+  </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/download_link.js"></script>
+</body>
 </html>
