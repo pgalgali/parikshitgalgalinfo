@@ -103,5 +103,35 @@
       "program": "Bachelors of Engineering BE IT.",
       "achievements": "First class"
     }
+  ],
+  "education1": [
+    {
+      "school1": "SSC",
+      "startDate1": "1998",
+      "endDate1": "1999",
+      "program1": "10 TH ",
+      "achievements1": "First class with distinction"
+    },
+    {
+      "school1": "HSC",
+      "startDate1": "1999",
+      "endDate1": "2001",
+      "program1": "HSC",
+      "achievements1": "First class"
+    },
+    {
+      "school1": "CWIT",
+      "startDate1": "2001",
+      "endDate1": "2003",
+      "program1": "Diploma in Electronics and Radio engg",
+      "achievements1": "First class"
+    },
+    {
+      "school1": "Pune University",
+      "startDate1": "2003",
+      "endDate1": "2006",
+      "program1": "Bachelors of Engineering BE IT.",
+      "achievements1": "First class"
+    }
   ]
 }
