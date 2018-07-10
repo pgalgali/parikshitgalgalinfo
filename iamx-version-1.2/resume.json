@@ -1,63 +1,107 @@
 {
-	"name" : "Homer Jay Simpson",
-	"contact" : "chunkylover53@aol.com",
-	"title" : "Safety Inspector",
-	"objective" : "To be happy.",
-	"aboutme" : "I love beer, doughnuts, and all things fried.",
-	"social" : [
-		{
-			"link" : "http://www.linkedin.com/in/homerjsimpson",
-			"name" : "LinkedIn"
-		},
-		{
-			"link" : "https://twitter.com/HomerJSimpson",
-			"name" : "twitter"
-		},
-		{
-			"link" : "https://github.com/bittersweetryan/jsonmue",
-			"name" : "this.source"
-		}
-	],
-	"skills" : [
-		"Eating",
-		"Sleeping",
-		"Bowling"
-	],
-	"frameworks" : [
-		"D'oh! What's a framework?"
-	],
-	"projects" : [
-		{
-			"name" : "Boxcar Racer",
-			"technologies" : "wood, and plastic",
-			"description" : "Helped Bart build a boxcar racer, but Martin's was better."
-		}
-	],
-	"experience" : [
-		{
-			"company" : "Springfield Nuclear",
-			"link" : "",
-			"title" : "Safety Inspector",
-			"startDate" : "1989",
-			"endDate" : "Present",
-			"responsibilities" : "Build high quality web applications using JavaScript, Java, ColdFusion for our clients. I also evaluate and educate the development team on new techniques and technologies. High-level application design including technologies, frameworks, and coding practices.",
-			"achievements" : "Introduced unit testing, continuous integration, source control, and development best practices to the team.  Started the Lunch and Learn program where team members teach each other new technologies and techniques. Lead development teams of up to 5 developers on profitable development projects."
-		}
-	],
-	"speaking" : [ 
-		{
-			"title" : "Debate for Garbage Commission",
-			"location" : "Springfield Townhall",
-			"link" : "http://textiles.online.ncsu.edu/online/SilverlightPlayer/Default.aspx?peid=02c7fe6174654f96b78a6194d3dbbe9d1d"
-		}
-	],
-	"education" : [
-		{
-			"school" : "Springfield University",
-			"startDate" : "1993",
-			"endDate" : "1993",
-			"program" : "Nuclear Physics",
-			"achievements" : "Ran over dean with car, kidnapped Sir Oinks-a-lot."
-		}
-	]
+  "name": "Parikshit G Galgali",
+  "contact": "pgalgali@gmail.com",
+  "title": "Microservices Developer",
+  "objective": "Seeking an opportunity to leverage my professional\n     experience and skills as a technical architect and willing to grow\n     vertically in the Technology Vertical.\n",
+  "aboutme": " Certified PMP®, PRINCE2® Foundation, ITIL® 2011 Foundation SCJP1.4® , SCWCD 5®. Experience in Investment Banking, Telecom domain, Manufacturing and Logistics, Retail. \n",
+  "social": [
+    {
+      "link": "https://www.linkedin.com/in/parikshitgalgali/",
+      "name": "LinkedIn"
+    },
+    {
+      "link": "https://github.com/pgalgali",
+      "name": "github"
+    }
+  ],
+  "skills": [
+    "Conversant with the SDLC TDD XP Agile and DevOPS\n     practice project methodologies",
+    "Expertise in core Java development including\n     collections, multi-threading & performance monitoring",
+    "Ability to partner with non-technical and technical\n     peers; ability to work effectively with remote colleagues participate in technical discussions"
+  ],
+  "frameworks": [
+    "Hibernate",
+    "Spring",
+    "JPA",
+    "Apache Camel",
+    "Google GSON",
+    "Apache CXF",
+    "Spring"
+  ],
+  "projects": [
+    {
+      "name": "Lead To Order Generation Tool for Telecom Giant",
+      "technologies": "Kubernates , Spring Boot and Apache Camel ",
+      "description": "Implemented and designed microservices based solution for telecom vendor using spring boot and Apache camel and utilized all the microservices ecosystems for the same."
+    },
+    {
+      "name": "Facade for Channel Enablement",
+      "technologies": "REST Webservices and SOAP webservices with facade design pattern",
+      "description": "Implemented and designed SOA based solution for telecom vendor using Apache CXF"
+    },
+    {
+      "name": "Secure CMS for Banking Client",
+      "technologies": "REST Webservices(Spring based ws,Jersey).Docusign® API,Aspose® API,Mc Afee®API GSON ",
+      "description": "Implemented and designed SOA based configuration management solution for banking vendor and consumed external interfaces like mcafee and secure signing using docusign "
+    }
+  ],
+  "experience": [
+    {
+      "company": "Cognizant Technology Solutions ",
+      "link": "https://www.cognizant.com/",
+      "title": "Project Manager",
+      "startDate": "2016",
+      "endDate": "Present",
+      "responsibilities": "Performed numerous technological due diligence assessments for Offshoring and handovers\nDefine a software architecture and vision\nDue diligence, technical relation with our partners. Simplify\nthe life of our developers by finding and implementing process that simplify their life and make the\nproduct stronger.",
+      "achievements": "Introduced unit testing, continuous integration, source control, and development best practices to the team.  Started the Lunch and Learn program where team members teach each other new technologies and techniques. Lead development teams of up to 5 developers on profitable development projects."
+    },
+    {
+      "company": "Capgemini Technology Solutions ",
+      "link": "https://www.capgemini.com/",
+      "title": "Sr Consultant",
+      "startDate": "2014",
+      "endDate": "w 2015",
+      "responsibilities": "Performed numerous technological due diligence assessments for Offshoring and handovers\nDefine a software architecture and vision\nDue diligence, technical relation with our partners. Simplify\nthe life of our developers by finding and implementing process that simplify their life and make the\nproduct stronger.",
+      "achievements": "Introduced unit testing, continuous integration, source control, and development best practices to the team.  Started the Lunch and Learn program where team members teach each other new technologies and techniques. Lead development teams of up to 5 developers on profitable development projects."
+    },
+    {
+      "company": "Cognizant Technology Solutions",
+      "link": "https://www.cognizant.com/",
+      "title": "Sr Associate",
+      "startDate": "2011",
+      "endDate": "w 2014",
+      "responsibilities": "Requirement Analysis\nTechnical design and feasibility analysis\nCode Review.\nHLD & LLD review\nPublish Best practices, Discuss feasibility analysis solution and coordinate with team, customer , Inhouse management and create tangible goals for the team along with realistic estimates and highlight risks.\nCoordinate with several stakeholders of project like Clients,Third party vendors,Dependent project teams , Management , Testing team, Deployment team.\nAlso take into account if milestones are being met ,If not behave as a SME in both functional and Techinical front to the team.\nHelp mentor and create solutions for other teams when and where needed.",
+      "achievements": "Introduced unit testing, continuous integration, source control, and development best practices to the team.  Started the Lunch and Learn program where team members teach each other new technologies and techniques. Lead development teams of up to 5 developers on profitable development projects."
+    }
+  ],
+  "education": [
+    {
+      "school": "SSC",
+      "startDate": "1998",
+      "endDate": "1999",
+      "program": "10 TH ",
+      "achievements": "First class with distinction"
+    },
+    {
+      "school": "HSC",
+      "startDate": "1999",
+      "endDate": "2001",
+      "program": "HSC",
+      "achievements": "First class"
+    },
+    {
+      "school": "CWIT",
+      "startDate": "2001",
+      "endDate": "2003",
+      "program": "Diploma in Electronics and Radio engg",
+      "achievements": "First class"
+    },
+    {
+      "school": "Pune University",
+      "startDate": "2003",
+      "endDate": "2006",
+      "program": "Bachelors of Engineering BE IT.",
+      "achievements": "First class"
+    }
+  ]
 }
