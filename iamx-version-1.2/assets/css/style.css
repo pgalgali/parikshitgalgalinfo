@@ -860,7 +860,7 @@ Resume Timeline
 .timeline-content{
     position: relative;
     padding: 24px;
-    background-color: #fff;
+    background-color: #921313;
     -webkit-transition:all 400ms;
     -moz-transition:all 400ms;
     -o-transition:all 400ms;
@@ -879,7 +879,7 @@ Resume Timeline
 }
 
 .timeline>li .timeline-content:hover {
-    background: #68c3a3;
+    background: #921313;
     color: #fff;
 }
 
