@@ -9,7 +9,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="background"></div>
     <header class="header">
         <div class="container">
             <h1 class="name">Parikshit Gururaj Galgali</h1>
@@ -22,19 +21,15 @@
             </p>
         </div>
     </header>
-    <main class="main-content">
-        <section class="banner">
-            <h2>Welcome to My Professional Resume</h2>
-            <p>Explore my skills, experiences, and certifications.</p>
-        </section>
-        <section class="about fade-in">
+    <main class="grid-container">
+        <section class="grid-item about">
             <h2>Professional Summary</h2>
             <p>
                 Accomplished Solution Architect with over 18 years of extensive experience in enterprise strategy, enterprise data architecture, and solution design. Demonstrated expertise in designing and delivering cost-effective, high-performance IT infrastructures and applications to address complex business challenges.
             </p>
         </section>
 
-        <section class="skills fade-in">
+        <section class="grid-item skills">
             <h2>Core Competencies</h2>
             <ul>
                 <li>Enterprise Architecture Design</li>
@@ -45,7 +40,7 @@
             </ul>
         </section>
 
-        <section class="experience fade-in">
+        <section class="grid-item experience">
             <h2>Professional Experience</h2>
             <h3>HSBC – Solution Architect</h3>
             <p><strong>Sep 2018 – Present</strong></p>
@@ -55,12 +50,12 @@
             </ul>
         </section>
 
-        <section class="education fade-in">
+        <section class="grid-item education">
             <h2>Education</h2>
             <p><strong>B.Tech/B.E. in Computers – Pune University | Graduated: 2006</strong></p>
         </section>
 
-        <section class="certifications fade-in">
+        <section class="grid-item certifications">
             <h2>Certifications</h2>
             <ul>
                 <li>Google Cloud Certified Professional Architect</li>
@@ -69,7 +64,7 @@
             </ul>
         </section>
 
-        <section class="references fade-in">
+        <section class="grid-item references">
             <h2>References</h2>
             <p>Available Upon Request</p>
         </section>
@@ -77,16 +72,5 @@
     <footer class="footer">
         <p>© 2024 Parikshit Gururaj Galgali. All rights reserved.</p>
     </footer>
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
