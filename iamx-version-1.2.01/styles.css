@@ -3,28 +3,15 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
+    background: linear-gradient(to right, #1c1c1c, #4c4c4c);
     color: #fff;
-    scroll-behavior: smooth;
-}
-
-/* Background Image */
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('background-image.jpg') no-repeat center center/cover;
-    z-index: -1;
-    opacity: 0.9;
 }
 
 /* Header */
 .header {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 2rem 0;
+    background: #0078D7;
     text-align: center;
+    padding: 2rem 0;
 }
 
 .header .name {
@@ -37,62 +24,45 @@ body {
     font-size: 1.2rem;
     font-weight: 300;
     margin-top: 1rem;
-    color: #ccc;
+    color: #eee;
 }
 
-/* Main Content */
-.main-content {
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     padding: 2rem;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.main-content section {
-    margin-bottom: 2rem;
+.grid-item {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
     padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Banner Section */
-.banner {
-    text-align: center;
-    padding: 2rem;
-    background: rgba(255, 215, 0, 0.8);
-    color: #000;
-    font-size: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
+.grid-item h2 {
+    color: #FFD700;
+    margin-bottom: 1rem;
 }
 
-/* Animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards;
+.grid-item ul {
+    list-style: disc;
+    padding-left: 1.5rem;
 }
 
-.fade-in:nth-child(odd) {
-    animation-delay: 0.2s;
-}
-
-.fade-in:nth-child(even) {
-    animation-delay: 0.4s;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.grid-item ul li {
+    margin-bottom: 0.5rem;
 }
 
 /* Footer */
 .footer {
     text-align: center;
-    background: rgba(0, 0, 0, 0.8);
-    color: #ccc;
+    background-color: #282c34;
+    color: #fff;
     padding: 1rem 0;
     font-size: 0.9rem;
     margin-top: 2rem;
