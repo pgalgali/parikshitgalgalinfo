@@ -3,74 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parikshit Gururaj Galgali - Professional Resume</title>
+    <title>Parikshit Galgali - Enterprise Architect</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="name">Parikshit Gururaj Galgali</h1>
-            <p class="tagline">
-                <i class="fas fa-envelope"></i> <a href="mailto:pgalgali@gmail.com">pgalgali@gmail.com</a> 
-                | <i class="fas fa-phone"></i> 9970725987 
-                | <i class="fas fa-map-marker-alt"></i> Pune, Maharashtra
-                <br>
-                <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/parikshitgalgali" target="_blank">LinkedIn Profile</a>
-            </p>
-        </div>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">Parikshit Galgali</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <main class="grid-container">
-        <section class="grid-item about">
-            <h2>Professional Summary</h2>
-            <p>
-                Accomplished Solution Architect with over 18 years of extensive experience in enterprise strategy, enterprise data architecture, and solution design. Demonstrated expertise in designing and delivering cost-effective, high-performance IT infrastructures and applications to address complex business challenges.
-            </p>
-        </section>
 
-        <section class="grid-item skills">
-            <h2>Core Competencies</h2>
-            <ul>
-                <li>Enterprise Architecture Design</li>
-                <li>Data Architecture & Management</li>
-                <li>Cloud Platforms & Technologies</li>
-                <li>API & Microservices Architecture</li>
-                <li>Data Integration & Transformation</li>
-            </ul>
-        </section>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <h1>Parikshit Galgali</h1>
+        <p>Quintessential Microservices and Agile Team Player.</p>
+        <div class="hero-buttons">
+            <a href="Parikshit_Galgali.pdf" class="btn">View Resume</a>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+    </section>
 
-        <section class="grid-item experience">
-            <h2>Professional Experience</h2>
-            <h3>HSBC – Solution Architect</h3>
-            <p><strong>Sep 2018 – Present</strong></p>
-            <ul>
-                <li>Led architecture for large-scale transformation projects, including Kubernetes-based deployments.</li>
-                <li>Designed high-availability systems using MongoDB and cloud solutions.</li>
-            </ul>
-        </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I am an Enterprise Architect with 12+ years of experience in IT service delivery, development, and design...</p>
+        <ul>
+            <li><strong>Full Name:</strong> Parikshit Galgali</li>
+            <li><strong>Date of Birth:</strong> 19 Mar 1983</li>
+            <li><strong>Location:</strong> Pune, India</li>
+            <li><strong>Email:</strong> pgalgali@gmail.com</li>
+        </ul>
+    </section>
 
-        <section class="grid-item education">
-            <h2>Education</h2>
-            <p><strong>B.Tech/B.E. in Computers – Pune University | Graduated: 2006</strong></p>
-        </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Microservices Development</li>
+            <li>Enterprise Architecture</li>
+            <li>Agile / TDD / XP / DevOps</li>
+            <li>Risk Mitigation Strategies</li>
+            <li>Project Management</li>
+            <li>Performance Tuning</li>
+        </ul>
+    </section>
 
-        <section class="grid-item certifications">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Google Cloud Certified Professional Architect</li>
-                <li>AWS Certified Solutions Architect</li>
-                <li>PMP® (Project Management Professional)</li>
-            </ul>
-        </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div>
+                <img src="assets/images/portfolio-1.jpg" alt="Project 1">
+                <h3>DISC Styles</h3>
+                <a href="https://www.mindmeister.com/849832233/disc-styles" target="_blank">View Project</a>
+            </div>
+            <div>
+                <img src="assets/images/portfolio-2.jpg" alt="Project 2">
+                <h3>NLP Tools</h3>
+                <a href="https://www.mindmeister.com/users/channel/23196753" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
 
-        <section class="grid-item references">
-            <h2>References</h2>
-            <p>Available Upon Request</p>
-        </section>
-    </main>
-    <footer class="footer">
-        <p>© 2024 Parikshit Gururaj Galgali. All rights reserved.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <h2>Experience</h2>
+        <ul>
+            <li>
+                <strong>Manager Projects</strong> - Cognizant Technology Solutions (2016-2018)
+                <p>Managing large engagements, resource and quality planning, and solution design.</p>
+            </li>
+            <li>
+                <strong>Senior Associate</strong> - CapGemini Technology Solutions (2014-2015)
+                <p>Requirement analysis, technical design, code review, and stakeholder coordination.</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/{your_form_id}" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Parikshit Galgali. All rights reserved.</p>
     </footer>
 </body>
 </html>
