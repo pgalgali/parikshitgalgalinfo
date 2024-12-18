@@ -1,69 +1,137 @@
-/* Global Styles */
+/* General Styles */
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     line-height: 1.6;
-    background: linear-gradient(to right, #1c1c1c, #4c4c4c);
+    color: #333;
+    background-color: #f5f5f7;
+}
+
+header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #007aff;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
     color: #fff;
 }
 
-/* Header */
-.header {
-    background: #0078D7;
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-buttons .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background: #007aff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero-buttons .btn:hover {
+    background: #0056b3;
+}
+
+section {
+    padding: 50px 20px;
     text-align: center;
-    padding: 2rem 0;
+    background: #fff;
+    margin-bottom: 10px;
 }
 
-.header .name {
-    font-size: 2.5rem;
-    margin: 0;
-    color: #FFD700;
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.header .tagline {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-top: 1rem;
-    color: #eee;
+section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
-/* Grid Layout */
-.grid-container {
+section ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.grid-item {
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.grid-item h2 {
-    color: #FFD700;
-    margin-bottom: 1rem;
-}
-
-.grid-item ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-}
-
-.grid-item ul li {
-    margin-bottom: 0.5rem;
-}
-
-/* Footer */
-.footer {
+.portfolio-grid div {
     text-align: center;
-    background-color: #282c34;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-grid div img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.portfolio-grid div h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
     color: #fff;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-    margin-top: 2rem;
+    font-size: 14px;
 }
