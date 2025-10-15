@@ -2,85 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Parikshit Galgali CV</title>
+  <title>Parikshit Gururaj Galgali - CV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { background: #f8fafc; font-family: 'Inter', sans-serif; margin: 0; }
-    .container { max-width: 900px; margin: 40px auto; background: #fff; box-shadow: 0 2px 12px #e2e8f0; border-radius: 22px; padding: 40px 20px; display: flex; flex-wrap: wrap; }
-    .sidebar { flex: 0 0 280px; margin-right: 32px; }
-    .sidebar .profile-img { width: 120px; height: 120px; border-radius: 50%; margin-bottom: 24px; background: #e5e7eb; }
-    .sidebar h2 { font-weight: 700; margin-bottom: 8px; }
-    .contact, .skills { margin-bottom: 32px; }
-    .main { flex: 1; }
-    .card { background: #f1f5f9; border-radius: 16px; padding: 24px; margin-bottom: 20px; }
-    .card h3 { margin-top: 0; margin-bottom: 12px; }
-    @media (max-width: 700px) {
-      .container { flex-direction: column; }
-      .sidebar { margin-right: 0; margin-bottom: 32px; }
+    body {
+      background: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      color: #22223b;
     }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      box-shadow: 0 2px 12px #e2e8f0;
+      border-radius: 22px;
+      padding: 40px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    .sidebar {
+      flex: 0 0 270px;
+      margin-right: 32px;
+    }
+    .sidebar h2 {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .sidebar .contact, .sidebar .skills, .sidebar .certs, .sidebar .affiliations {
+      background: #f1f5f9;
+      border-radius: 16px;
+      padding: 20px 20px 12px 20px;
+      margin-bottom: 16px;
+    }
+    .sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
+    }
+    .main {
+      flex: 1;
+      min-width: 280px;
+      margin-top: 12px;
+    }
+    .main .section {
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 28px 24px 20px 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 1px 3px #e9e9ef33;
+    }
+    h3 {
+      margin: 0 0 10px 0;
+      color: #283593;
+      font-size: 1.18rem;
+    }
+    /* Timeline styles (vertical) */
+    .timeline {
+      position: relative;
+      margin-left: 0px;
+      padding-left: 36px;
+      border-left: 3.5px solid #6c63ff;
+    }
+    .timeline-entry {
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .timeline-entry:before {
+      content: '';
+      position: absolute;
+      left: -21px;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border: 4px solid #6c63ff;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 2px 4px #6c63ff21;
+    }
+    .timeline-entry:last-child { margin-bottom: 0; }
+    .timeline-date {
+      color: #6166b3;
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+    .timeline-header {
+      margin-bottom: 4px;
+      font-size: 1.08em;
+      font-weight: 700;
+    }
+    .timeline-content {
+      margin-left: 1px;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    @media (max-width: 850px) {
+      .container { flex-direction: column; padding: 24px 4vw;}
+      .sidebar { margin-right: 0; }
+    }
+    a { color: #2637ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- Sidebar: Contact & Core Info -->
     <aside class="sidebar">
-      <div class="profile-img"></div>
-      <h2>Parikshit Galgali</h2>
-      <div class="contact card">
-        <h3>Contact</h3>
-        <p>Email: pgalgali@gmail.com</p>
-        <p>Phone: 9970725987</p>
-        <p>Pune, Maharashtra</p>
-        <p><a href="https://www.linkedin.com/in/parikshitgalgali">LinkedIn</a></p>
-      </div>
-      <div class="skills card">
-        <h3>Skills</h3>
-        <ul>
-          <li>Enterprise Architecture</li>
-          <li>Cloud Platforms (AWS, GCP)</li>
-          <li>Data Modernization, ETL</li>
-          <li>Team Leadership</li>
-          <li>Solution Design</li>
-        </ul>
-      </div>
-      <div class="certs card">
-        <h3>Certifications</h3>
-        <ul>
-          <li>AWS Solution Architect</li>
-          <li>Google Cloud Architect</li>
-          <li>PMP®, PRINCE2®, ITIL®</li>
-        </ul>
-      </div>
-    </aside>
-    <main class="main">
-      <div class="card">
-        <h3>Professional Summary</h3>
-        <p>
-          Accomplished Solution Architect with 18+ years in enterprise strategy, data architecture and solution design. Managed large global teams, delivered high-performance IT solutions for investment banking, telecom, manufacturing, logistics, and retail domains[file:1].
-        </p>
-      </div>
-      <div class="card">
-        <h3>Experience</h3>
-        <ul>
-          <li>
-            <strong>HSBC</strong> – Solution Architect<br>
-            Managed architecture, cloud migration, and team leadership
-          </li>
-          <li>
-            <strong>Cognizant</strong> – Technical Architect<br>
-            Led global projects and product design
-          </li>
-          <li>
-            <strong>Capgemini</strong> – Senior Consultant<br>
-            Solution development, stakeholder engagement
-          </li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Portfolio & Documentation</h3>
-        <p>See <a href="#designergpt">DesignerGPT Documentation</a> for generative web design guides[file:2].</p>
-      </div>
-    </main>
-  </div>
-</body>
-</html>
+      <h2>Parikshit Gururaj Galgali</h2>
+      <div class="
