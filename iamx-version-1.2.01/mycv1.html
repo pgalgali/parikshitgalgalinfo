@@ -10,315 +10,447 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-size: 11pt;
       line-height: 1.4;
-      color: #333;
-      background: #f5f5f5;
+      color: #1a1a1a;
+      background: #e8e8e8;
       padding: 20px;
     }
     .resume {
-      max-width: 850px;
+      max-width: 880px;
       margin: 0 auto;
       background: white;
-      padding: 40px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
     .header {
-      border-bottom: 3px solid #2c5282;
-      padding-bottom: 20px;
+      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      color: white;
+      padding: 30px 40px;
+      position: relative;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 50%, #dc2626 100%);
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 25px;
       margin-bottom: 20px;
     }
-    .name {
-      font-size: 28pt;
-      font-weight: bold;
-      color: #2c5282;
-      margin-bottom: 5px;
+    .photo-placeholder {
+      width: 110px;
+      height: 130px;
+      border: 3px solid rgba(255,255,255,0.5);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.8);
+      font-size: 9pt;
+      text-align: center;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      flex-shrink: 0;
     }
-    .title {
-      font-size: 14pt;
-      color: #4a5568;
-      margin-bottom: 15px;
-    }
+    .photo-placeholder:hover { background: rgba(255,255,255,0.2); border-color: white; }
+    .header-text { flex-grow: 1; }
+    .name { font-size: 32pt; font-weight: 700; letter-spacing: 1px; margin-bottom: 5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+    .title { font-size: 12pt; color: #fde68a; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
     .contact-info {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
       font-size: 10pt;
-      color: #555;
+      color: rgba(255,255,255,0.9);
+      border-top: 1px solid rgba(255,255,255,0.3);
+      padding-top: 15px;
     }
-    .contact-item { display: flex; align-items: center; gap: 5px; }
+    .contact-item { display: flex; align-items: center; gap: 8px; }
+    .contact-icon { color: #fde68a; }
+    .main-content { padding: 30px 40px; }
     .summary {
-      color: #4a5568;
+      color: #444;
       text-align: justify;
-      margin-bottom: 25px;
-      padding: 15px;
-      background: #f8fafc;
-      border-left: 4px solid #2c5282;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-left: 5px solid #0ea5e9;
+      font-size: 10.5pt;
+      border-radius: 0 8px 8px 0;
     }
-    .section { margin-bottom: 25px; }
+    .section { margin-bottom: 30px; }
     .section-title {
-      font-size: 14pt;
-      font-weight: bold;
-      color: #2c5282;
+      font-size: 11pt;
+      font-weight: 600;
+      color: #0ea5e9;
       text-transform: uppercase;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 8px;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
+      letter-spacing: 3px;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #0ea5e9;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: #fbbf24;
+      border-radius: 50%;
     }
     .competencies-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 10px;
     }
     .competency-item {
-      padding: 8px 12px;
-      background: #edf2f7;
-      border-radius: 4px;
+      padding: 12px 15px;
+      background: #fffbeb;
+      border-left: 4px solid #fbbf24;
       font-size: 10pt;
+      border-radius: 0 6px 6px 0;
     }
-    .competency-item strong { color: #2c5282; }
+    .competency-item strong { color: #b45309; }
+    .timeline { position: relative; padding-left: 35px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 5px;
+      bottom: 5px;
+      width: 3px;
+      background: linear-gradient(180deg, #0ea5e9 0%, #fbbf24 50%, #dc2626 100%);
+      border-radius: 3px;
+    }
     .job {
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #eee;
+      margin-bottom: 25px;
+      position: relative;
     }
-    .job:last-child { border-bottom: none; }
-    .job-header {
+    .job::before {
+      content: '';
+      position: absolute;
+      left: -29px;
+      top: 8px;
+      width: 14px;
+      height: 14px;
+      background: white;
+      border-radius: 50%;
+      border: 4px solid #0ea5e9;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .job:nth-child(2)::before { border-color: #22c55e; }
+    .job:nth-child(3)::before { border-color: #fbbf24; }
+    .job:nth-child(4)::before { border-color: #f97316; }
+    .job:nth-child(5)::before { border-color: #dc2626; }
+    .job-header { margin-bottom: 10px; }
+    .job-title-row {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8px;
+      align-items: center;
     }
-    .job-title {
-      font-size: 12pt;
-      font-weight: bold;
-      color: #2d3748;
-    }
-    .company {
-      font-size: 11pt;
-      color: #4a5568;
-      font-style: italic;
-    }
+    .job-title { font-size: 12pt; font-weight: 600; color: #1a1a1a; }
     .job-date {
       font-size: 10pt;
-      color: #718096;
+      color: white;
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      padding: 4px 14px;
+      border-radius: 20px;
       white-space: nowrap;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(220,38,38,0.3);
     }
-    .job-description { margin-top: 10px; }
-    .job-description ul {
-      margin-left: 20px;
-      color: #4a5568;
+    .company { font-size: 10.5pt; color: #0ea5e9; margin-top: 3px; font-weight: 500; }
+    .job-description ul { margin-left: 18px; color: #444; }
+    .job-description li { margin-bottom: 5px; font-size: 10pt; }
+    .bottom-section {
+      background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+      padding: 30px 40px;
+      border-top: 5px solid #fbbf24;
     }
-    .job-description li {
-      margin-bottom: 5px;
-      font-size: 10pt;
-    }
-    .three-col {
+    .grid-container {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 30px;
+      grid-template-columns: 1fr 1.2fr 1.2fr;
+      gap: 20px;
     }
-    .col h4 {
-      font-size: 11pt;
-      color: #2c5282;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 5px;
+    .grid-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-top: 4px solid #0ea5e9;
     }
-    .col ul {
-      list-style: none;
+    .grid-box:nth-child(2) { border-top-color: #fbbf24; }
+    .grid-box:nth-child(3) { border-top-color: #dc2626; }
+    .grid-box h4 {
       font-size: 10pt;
-      color: #4a5568;
+      color: #0ea5e9;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed #e5e7eb;
     }
-    .col li { margin-bottom: 5px; padding-left: 12px; position: relative; }
-    .col li::before {
-      content: "•";
-      color: #2c5282;
-      position: absolute;
-      left: 0;
+    .grid-box:nth-child(2) h4 { color: #b45309; }
+    .grid-box:nth-child(3) h4 { color: #dc2626; }
+    .edu-item { margin-bottom: 10px; }
+    .edu-degree { font-weight: 600; color: #1a1a1a; font-size: 10.5pt; }
+    .edu-school { color: #666; font-size: 10pt; }
+    .edu-year { color: #0ea5e9; font-size: 9pt; margin-top: 5px; font-weight: 600; }
+    .cert-grid { display: grid; gap: 8px; }
+    .cert-item {
+      padding: 8px 12px;
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      font-size: 9.5pt;
+      border-left: 3px solid #fbbf24;
+      border-radius: 0 5px 5px 0;
     }
-    [contenteditable]:focus {
-      outline: 2px dashed #2c5282;
-      outline-offset: 2px;
+    .skill-category { margin-bottom: 12px; }
+    .skill-label { font-size: 9pt; color: #888; text-transform: uppercase; margin-bottom: 6px; font-weight: 600; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .skill-tag {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      color: white;
+      padding: 4px 10px;
+      font-size: 8.5pt;
+      border-radius: 15px;
+      font-weight: 500;
     }
+    .skill-category:nth-child(2) .skill-tag {
+      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    }
+    .skill-category:nth-child(3) .skill-tag {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      color: #1a1a1a;
+    }
+    [contenteditable]:focus { outline: 2px dashed #0ea5e9; outline-offset: 2px; }
     .edit-hint {
-      background: #fef3c7;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
       padding: 10px 15px;
-      margin-bottom: 20px;
-      border-radius: 5px;
       font-size: 10pt;
       color: #92400e;
+      text-align: center;
+      border-bottom: 2px solid #fbbf24;
     }
     @media print {
       body { background: white; padding: 0; }
-      .resume { box-shadow: none; padding: 20px; }
+      .resume { box-shadow: none; }
       .edit-hint { display: none; }
+      #photoText { display: none; }
     }
   </style>
 </head>
 <body>
+  <script>
+    function loadPhoto(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.getElementById('profilePhoto');
+          const text = document.getElementById('photoText');
+          img.src = e.target.result;
+          img.style.display = 'block';
+          text.style.display = 'none';
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
   <div class="resume">
-    <div class="edit-hint">💡 <strong>Click any text to edit.</strong> Use Ctrl+P to print or save as PDF. Copy all content (Ctrl+A, Ctrl+C) and paste into Word/Google Docs.</div>
+    <div class="edit-hint">💡 <strong>Click any text to edit</strong> | Ctrl+P to print/save PDF | Copy & paste into Word for DOCX</div>
     
     <header class="header">
-      <div class="name" contenteditable="true">Parikshit Galgali</div>
-      <div class="title" contenteditable="true">Enterprise Architect, HSBC Pune India</div>
+      <div class="header-content">
+        <div class="photo-placeholder" onclick="document.getElementById('photoInput').click()">
+          <img id="profilePhoto" src="" alt="" style="display:none; width:100%; height:100%; object-fit:cover; border-radius:5px;">
+          <div id="photoText">📷<br>Click to<br>add photo</div>
+        </div>
+        <input type="file" id="photoInput" accept="image/*" style="display:none" onchange="loadPhoto(this)">
+        <div class="header-text">
+          <div class="name" contenteditable="true">PARIKSHIT GALGALI</div>
+          <div class="title" contenteditable="true">Enterprise Architect | HSBC Pune, India</div>
+        </div>
+      </div>
       <div class="contact-info">
-        <span class="contact-item" contenteditable="true">📞 9970725987</span>
-        <span class="contact-item" contenteditable="true">📍 Pune, Maharashtra</span>
-        <span class="contact-item" contenteditable="true">✉️ pgalgali@gmail.com</span>
-        <span class="contact-item" contenteditable="true">🔗 linkedin.com/in/parikshitgalgali</span>
+        <span class="contact-item" contenteditable="true"><span class="contact-icon">☎</span> 9970725987</span>
+        <span class="contact-item" contenteditable="true"><span class="contact-icon">◎</span> Pune, Maharashtra</span>
+        <span class="contact-item" contenteditable="true"><span class="contact-icon">✉</span> pgalgali@gmail.com</span>
+        <span class="contact-item" contenteditable="true"><span class="contact-icon">⚯</span> linkedin.com/in/parikshitgalgali</span>
       </div>
     </header>
 
-    <div class="summary" contenteditable="true">
-      Accomplished Solution Architect with over 18 years of extensive experience in enterprise strategy, enterprise data architecture, and solution design. Demonstrated expertise in designing and delivering cost-effective, high-performance IT infrastructures and applications to address complex business challenges. Proven track record in managing large global teams and holding P&L responsibilities. Certified AWS Solution Architect, Google Cloud Certified Architect, Google Cloud Professional Data Engineer, PMP®, PRINCE2® Foundation, ITIL® 2011 Foundation, SCJP1.4®, SCWCD 5®. Experienced in Commercial and Investment Banking, Telecom, Manufacturing, Logistics, and Retail domains.
+    <div class="main-content">
+      <div class="summary" contenteditable="true">
+        Accomplished Solution Architect with over 18 years of extensive experience in enterprise strategy, enterprise data architecture, and solution design. Demonstrated expertise in designing and delivering cost-effective, high-performance IT infrastructures and applications to address complex business challenges. Proven track record in managing large global teams and holding P&L responsibilities. Experienced in Commercial and Investment Banking, Telecom, Manufacturing, Logistics, and Retail domains.
+      </div>
+
+      <section class="section">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="competencies-grid">
+          <div class="competency-item" contenteditable="true"><strong>Enterprise Architecture:</strong> Scalable architectures, cloud modernization, microservices, Kubernetes</div>
+          <div class="competency-item" contenteditable="true"><strong>Data Architecture:</strong> Data lakes, ETL, Snowflake, MongoDB, Debezium</div>
+          <div class="competency-item" contenteditable="true"><strong>Cloud Platforms:</strong> AWS, GCP, GKE, Kubernetes, Cloud Foundry</div>
+          <div class="competency-item" contenteditable="true"><strong>API & Microservices:</strong> API management, Spring Boot, Kubernetes</div>
+          <div class="competency-item" contenteditable="true"><strong>Data Integration:</strong> ETL, CDC solutions, Camunda, Apache Camel</div>
+          <div class="competency-item" contenteditable="true"><strong>Leadership:</strong> Global teams, mentoring, stakeholder management</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title-row">
+                <div class="job-title" contenteditable="true">Lead Solutions Architect</div>
+                <div class="job-date" contenteditable="true">2018 – Present</div>
+              </div>
+              <div class="company" contenteditable="true">HSBC, Pune, India</div>
+            </div>
+            <div class="job-description">
+              <ul contenteditable="true">
+                <li>Led architecture for large-scale transformation projects, migrating legacy systems to cloud with Kubernetes and MongoDB</li>
+                <li>Designed MongoDB-based CQRS patterns for high-availability, low-latency systems</li>
+                <li>Evaluated and selected tools for ETL workflows, CDC solutions (Debezium), and workflow orchestration</li>
+                <li>Spearheaded Open Banking API implementation focusing on consent management and security</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title-row">
+                <div class="job-title" contenteditable="true">Applications Architect</div>
+                <div class="job-date" contenteditable="true">2016 – 2018</div>
+              </div>
+              <div class="company" contenteditable="true">Cognizant Technology Solutions, Pune / Munich</div>
+            </div>
+            <div class="job-description">
+              <ul contenteditable="true">
+                <li>Designed microservices-based solutions using Spring Boot, Apache Camel, and Kubernetes</li>
+                <li>Led architecture of cloud-native data solutions and APIs focusing on scalability</li>
+                <li>Supported business development initiatives and contributed to RFPs</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title-row">
+                <div class="job-title" contenteditable="true">Senior Consultant</div>
+                <div class="job-date" contenteditable="true">2014 – 2016</div>
+              </div>
+              <div class="company" contenteditable="true">Capgemini, Pune | Client: Barclays (Finance)</div>
+            </div>
+            <div class="job-description">
+              <ul contenteditable="true">
+                <li>Provided technical leadership and architectural design for enterprise applications</li>
+                <li>Led migration of legacy systems to cloud platforms</li>
+                <li>Implemented REST-based JWT token authentication and IAM solutions</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title-row">
+                <div class="job-title" contenteditable="true">Senior Associate</div>
+                <div class="job-date" contenteditable="true">2011 – 2014</div>
+              </div>
+              <div class="company" contenteditable="true">Cognizant Technology Solutions, Pune</div>
+            </div>
+            <div class="job-description">
+              <ul contenteditable="true">
+                <li>Led development of Java-based microservices and API integrations</li>
+                <li>Conducted performance tuning for high-throughput financial applications</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title-row">
+                <div class="job-title" contenteditable="true">Product Engineer / Software Professional</div>
+                <div class="job-date" contenteditable="true">2006 – 2011</div>
+              </div>
+              <div class="company" contenteditable="true">SunGard (FIS) | Tieto | Cognizant | T-Systems</div>
+            </div>
+            <div class="job-description">
+              <ul contenteditable="true">
+                <li>Developed enterprise software solutions in financial services domain</li>
+                <li>Designed Java-based applications with SQL Server and Hibernate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <section class="section">
-      <h2 class="section-title">Core Competencies</h2>
-      <div class="competencies-grid">
-        <div class="competency-item" contenteditable="true"><strong>Enterprise Architecture Design:</strong> Scalable and resilient architectures, cloud modernization, microservices, Kubernetes</div>
-        <div class="competency-item" contenteditable="true"><strong>Data Architecture & Management:</strong> Data lakes, ETL processes, data integration (Snowflake, MongoDB, Debezium)</div>
-        <div class="competency-item" contenteditable="true"><strong>Cloud Platforms:</strong> AWS, Google Cloud Platform (GCP), GKE, Kubernetes, cloud-native tools</div>
-        <div class="competency-item" contenteditable="true"><strong>API & Microservices:</strong> API management, Spring Boot, Kubernetes deployments</div>
-        <div class="competency-item" contenteditable="true"><strong>Data Integration:</strong> ETL, CDC solutions, Camunda, Apache Camel</div>
-        <div class="competency-item" contenteditable="true"><strong>Team Leadership:</strong> Global teams, mentoring, stakeholder collaboration</div>
-        <div class="competency-item" contenteditable="true"><strong>Business Development:</strong> Sales, client relationships, project delivery</div>
-        <div class="competency-item" contenteditable="true"><strong>Finance & P&L:</strong> Budgeting, financial planning, profitability optimization</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Professional Experience</h2>
-      
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title" contenteditable="true">Lead Solutions Architect</div>
-            <div class="company" contenteditable="true">HSBC, Pune, IN</div>
-          </div>
-          <div class="job-date" contenteditable="true">2018 – Present</div>
-        </div>
-        <div class="job-description">
-          <ul contenteditable="true">
-            <li>Led architecture for multiple large-scale transformation projects, including migrating legacy systems to cloud-based solutions with focus on Kubernetes and MongoDB</li>
-            <li>Designed and implemented MongoDB-based CQRS patterns for high-availability, low-latency systems</li>
-            <li>Conducted technical due diligence for potential investments and partnerships</li>
-            <li>Evaluated and selected tools for ETL workflows, CDC solutions (Debezium), and workflow orchestration</li>
-            <li>Provided leadership in defining cloud strategy and roadmaps across GKE and AWS</li>
-            <li>Spearheaded Open Banking API implementation with focus on consent management and security</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title" contenteditable="true">Applications Architect</div>
-            <div class="company" contenteditable="true">Cognizant Technology Solutions, Pune/Munich</div>
-          </div>
-          <div class="job-date" contenteditable="true">Jan 2016 – 2018</div>
-        </div>
-        <div class="job-description">
-          <ul contenteditable="true">
-            <li>Designed and implemented microservices-based solutions using Spring Boot, Apache Camel, and Kubernetes</li>
-            <li>Led architecture of cloud-native data solutions and APIs focusing on scalability</li>
-            <li>Collaborated with client teams to translate requirements into robust technical solutions</li>
-            <li>Supported business development initiatives and contributed to RFPs</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title" contenteditable="true">Senior Consultant</div>
-            <div class="company" contenteditable="true">Capgemini, Pune, IN | Client: Barclays</div>
-          </div>
-          <div class="job-date" contenteditable="true">2014 – 2016</div>
-        </div>
-        <div class="job-description">
-          <ul contenteditable="true">
-            <li>Provided technical leadership and architectural design for enterprise applications</li>
-            <li>Led migration of legacy systems to cloud platforms</li>
-            <li>Implemented identity and access management using REST-based JWT token authentication</li>
-            <li>Designed authentication mechanisms with API gateways and IAM solutions</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title" contenteditable="true">Senior Associate</div>
-            <div class="company" contenteditable="true">Cognizant Technology Solutions, Pune, IN</div>
-          </div>
-          <div class="job-date" contenteditable="true">2011 – 2014</div>
-        </div>
-        <div class="job-description">
-          <ul contenteditable="true">
-            <li>Led development of enterprise applications focusing on Java-based microservices</li>
-            <li>Designed scalable solutions for financial services clients</li>
-            <li>Conducted performance tuning and optimization for high-throughput applications</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title" contenteditable="true">Product Engineer / Software Professional / Programmer Analyst</div>
-            <div class="company" contenteditable="true">SunGard (FIS) / Tieto / Cognizant / T-Systems</div>
-          </div>
-          <div class="job-date" contenteditable="true">2006 – 2011</div>
-        </div>
-        <div class="job-description">
-          <ul contenteditable="true">
-            <li>Developed and maintained enterprise software solutions in financial services</li>
-            <li>Gathered and analyzed requirements, created estimations for development efforts</li>
-            <li>Designed and implemented Java-based applications with SQL Server and Hibernate</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Education, Certifications & Skills</h2>
-      <div class="three-col">
-        <div class="col">
+    <div class="bottom-section">
+      <div class="grid-container">
+        <div class="grid-box">
           <h4>Education</h4>
-          <ul contenteditable="true">
-            <li>Bachelor of Engineering</li>
-            <li>Information Technology</li>
-            <li>Pune University, IN</li>
-            <li>May 2006</li>
-          </ul>
+          <div class="edu-item" contenteditable="true">
+            <div class="edu-degree">Bachelor of Engineering</div>
+            <div class="edu-school">Information Technology</div>
+            <div class="edu-school">Pune University, India</div>
+            <div class="edu-year">May 2006</div>
+          </div>
         </div>
-        <div class="col">
+        
+        <div class="grid-box">
           <h4>Certifications</h4>
-          <ul contenteditable="true">
-            <li>Google Cloud Professional Architect</li>
-            <li>Google Cloud Data Engineer</li>
-            <li>AWS Solutions Architect</li>
-            <li>PMP®</li>
-            <li>PRINCE2® Foundation</li>
-            <li>ITIL® 2011 Foundation</li>
-            <li>SCJP1.4® / SCWCD 5®</li>
-          </ul>
+          <div class="cert-grid" contenteditable="true">
+            <div class="cert-item">Google Cloud Professional Architect</div>
+            <div class="cert-item">Google Cloud Data Engineer</div>
+            <div class="cert-item">AWS Certified Solutions Architect</div>
+            <div class="cert-item">PMP® (Project Management Professional)</div>
+            <div class="cert-item">PRINCE2® Foundation</div>
+            <div class="cert-item">ITIL® 2011 Foundation</div>
+            <div class="cert-item">SCJP 1.4® | SCWCD 5®</div>
+          </div>
         </div>
-        <div class="col">
+        
+        <div class="grid-box">
           <h4>Technical Skills</h4>
-          <ul contenteditable="true">
-            <li>AWS, GCP, GKE, Kubernetes</li>
-            <li>Snowflake, MongoDB, BigQuery</li>
-            <li>Java 8, SQL, PL-SQL</li>
-            <li>Terraform, Docker, Jenkins</li>
-            <li>Apache Camel, Debezium</li>
-            <li>Agile, ITIL, DevOps</li>
-          </ul>
+          <div class="skill-category">
+            <div class="skill-label">Cloud & DevOps</div>
+            <div class="skill-tags" contenteditable="true">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">GCP</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Terraform</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-label">Data & Databases</div>
+            <div class="skill-tags" contenteditable="true">
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Snowflake</span>
+              <span class="skill-tag">BigQuery</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-label">Languages & Tools</div>
+            <div class="skill-tags" contenteditable="true">
+              <span class="skill-tag">Java 8</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">Apache Camel</span>
+              <span class="skill-tag">Jenkins</span>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </body>
 </html>
