@@ -1,207 +1,324 @@
 <!DOCTYPE html>
-<html>
-	<head>		
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-		
-		<link rel="stylesheet" type="text/css" href="css/site.css">
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="css/small.css" />
-		<title></title>
-		<!--[if lt IE 9]>
-		<script src="js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<nav>
-			<ul data-content="social">
-				
-			</ul>
-		</nav>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Template</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 11pt;
+      line-height: 1.4;
+      color: #333;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .resume {
+      max-width: 850px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .header {
+      border-bottom: 3px solid #2c5282;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    .name {
+      font-size: 28pt;
+      font-weight: bold;
+      color: #2c5282;
+      margin-bottom: 5px;
+    }
+    .title {
+      font-size: 14pt;
+      color: #4a5568;
+      margin-bottom: 15px;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 10pt;
+      color: #555;
+    }
+    .contact-item { display: flex; align-items: center; gap: 5px; }
+    .summary {
+      color: #4a5568;
+      text-align: justify;
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #f8fafc;
+      border-left: 4px solid #2c5282;
+    }
+    .section { margin-bottom: 25px; }
+    .section-title {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #2c5282;
+      text-transform: uppercase;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    .competencies-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .competency-item {
+      padding: 8px 12px;
+      background: #edf2f7;
+      border-radius: 4px;
+      font-size: 10pt;
+    }
+    .competency-item strong { color: #2c5282; }
+    .job {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    .job:last-child { border-bottom: none; }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .job-title {
+      font-size: 12pt;
+      font-weight: bold;
+      color: #2d3748;
+    }
+    .company {
+      font-size: 11pt;
+      color: #4a5568;
+      font-style: italic;
+    }
+    .job-date {
+      font-size: 10pt;
+      color: #718096;
+      white-space: nowrap;
+    }
+    .job-description { margin-top: 10px; }
+    .job-description ul {
+      margin-left: 20px;
+      color: #4a5568;
+    }
+    .job-description li {
+      margin-bottom: 5px;
+      font-size: 10pt;
+    }
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+    }
+    .col h4 {
+      font-size: 11pt;
+      color: #2c5282;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 5px;
+    }
+    .col ul {
+      list-style: none;
+      font-size: 10pt;
+      color: #4a5568;
+    }
+    .col li { margin-bottom: 5px; padding-left: 12px; position: relative; }
+    .col li::before {
+      content: "•";
+      color: #2c5282;
+      position: absolute;
+      left: 0;
+    }
+    [contenteditable]:focus {
+      outline: 2px dashed #2c5282;
+      outline-offset: 2px;
+    }
+    .edit-hint {
+      background: #fef3c7;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      font-size: 10pt;
+      color: #92400e;
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .resume { box-shadow: none; padding: 20px; }
+      .edit-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <div class="edit-hint">💡 <strong>Click any text to edit.</strong> Use Ctrl+P to print or save as PDF. Copy all content (Ctrl+A, Ctrl+C) and paste into Word/Google Docs.</div>
+    
+    <header class="header">
+      <div class="name" contenteditable="true">Parikshit Galgali</div>
+      <div class="title" contenteditable="true">Enterprise Architect, HSBC Pune India</div>
+      <div class="contact-info">
+        <span class="contact-item" contenteditable="true">📞 9970725987</span>
+        <span class="contact-item" contenteditable="true">📍 Pune, Maharashtra</span>
+        <span class="contact-item" contenteditable="true">✉️ pgalgali@gmail.com</span>
+        <span class="contact-item" contenteditable="true">🔗 linkedin.com/in/parikshitgalgali</span>
+      </div>
+    </header>
 
-		<div id="content">
-			<div class="first" id="viewJson">
-				<span class="right"><a href="resume.json">View as JSON</a></span>
-			</div>
+    <div class="summary" contenteditable="true">
+      Accomplished Solution Architect with over 18 years of extensive experience in enterprise strategy, enterprise data architecture, and solution design. Demonstrated expertise in designing and delivering cost-effective, high-performance IT infrastructures and applications to address complex business challenges. Proven track record in managing large global teams and holding P&L responsibilities. Certified AWS Solution Architect, Google Cloud Certified Architect, Google Cloud Professional Data Engineer, PMP®, PRINCE2® Foundation, ITIL® 2011 Foundation, SCJP1.4®, SCWCD 5®. Experienced in Commercial and Investment Banking, Telecom, Manufacturing, Logistics, and Retail domains.
+    </div>
 
-			<section>
-				<h1 data-content="name" class="name"></h1>
-				<h2 data-content="title"></h2>
-				<section id="contact">
-				</section>
-			</section>
-			
-			<section id="objective">
-				<h1>Objective</h1>
-				<p data-content="objective"></p>
-			</section>
+    <section class="section">
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="competencies-grid">
+        <div class="competency-item" contenteditable="true"><strong>Enterprise Architecture Design:</strong> Scalable and resilient architectures, cloud modernization, microservices, Kubernetes</div>
+        <div class="competency-item" contenteditable="true"><strong>Data Architecture & Management:</strong> Data lakes, ETL processes, data integration (Snowflake, MongoDB, Debezium)</div>
+        <div class="competency-item" contenteditable="true"><strong>Cloud Platforms:</strong> AWS, Google Cloud Platform (GCP), GKE, Kubernetes, cloud-native tools</div>
+        <div class="competency-item" contenteditable="true"><strong>API & Microservices:</strong> API management, Spring Boot, Kubernetes deployments</div>
+        <div class="competency-item" contenteditable="true"><strong>Data Integration:</strong> ETL, CDC solutions, Camunda, Apache Camel</div>
+        <div class="competency-item" contenteditable="true"><strong>Team Leadership:</strong> Global teams, mentoring, stakeholder collaboration</div>
+        <div class="competency-item" contenteditable="true"><strong>Business Development:</strong> Sales, client relationships, project delivery</div>
+        <div class="competency-item" contenteditable="true"><strong>Finance & P&L:</strong> Budgeting, financial planning, profitability optimization</div>
+      </div>
+    </section>
 
-			<section id="aboutme">
-				<h1>Executive Summary</h1>
-				<p data-content="aboutme"></p>
-			</section>
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+      
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title" contenteditable="true">Lead Solutions Architect</div>
+            <div class="company" contenteditable="true">HSBC, Pune, IN</div>
+          </div>
+          <div class="job-date" contenteditable="true">2018 – Present</div>
+        </div>
+        <div class="job-description">
+          <ul contenteditable="true">
+            <li>Led architecture for multiple large-scale transformation projects, including migrating legacy systems to cloud-based solutions with focus on Kubernetes and MongoDB</li>
+            <li>Designed and implemented MongoDB-based CQRS patterns for high-availability, low-latency systems</li>
+            <li>Conducted technical due diligence for potential investments and partnerships</li>
+            <li>Evaluated and selected tools for ETL workflows, CDC solutions (Debezium), and workflow orchestration</li>
+            <li>Provided leadership in defining cloud strategy and roadmaps across GKE and AWS</li>
+            <li>Spearheaded Open Banking API implementation with focus on consent management and security</li>
+          </ul>
+        </div>
+      </div>
 
-			<section id="skills">
-				<h1>Skills / Languages</h1>
-				<ul data-content="skills" class="double">
-				</ul>
-			</section>
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title" contenteditable="true">Applications Architect</div>
+            <div class="company" contenteditable="true">Cognizant Technology Solutions, Pune/Munich</div>
+          </div>
+          <div class="job-date" contenteditable="true">Jan 2016 – 2018</div>
+        </div>
+        <div class="job-description">
+          <ul contenteditable="true">
+            <li>Designed and implemented microservices-based solutions using Spring Boot, Apache Camel, and Kubernetes</li>
+            <li>Led architecture of cloud-native data solutions and APIs focusing on scalability</li>
+            <li>Collaborated with client teams to translate requirements into robust technical solutions</li>
+            <li>Supported business development initiatives and contributed to RFPs</li>
+          </ul>
+        </div>
+      </div>
 
-			<section id="frameworks">
-				<h1>Frameworks / Libraries / Data Formats</h1>
-				<ul data-content="frameworks" class="double">
-				
-				</ul>
-			</section>
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title" contenteditable="true">Senior Consultant</div>
+            <div class="company" contenteditable="true">Capgemini, Pune, IN | Client: Barclays</div>
+          </div>
+          <div class="job-date" contenteditable="true">2014 – 2016</div>
+        </div>
+        <div class="job-description">
+          <ul contenteditable="true">
+            <li>Provided technical leadership and architectural design for enterprise applications</li>
+            <li>Led migration of legacy systems to cloud platforms</li>
+            <li>Implemented identity and access management using REST-based JWT token authentication</li>
+            <li>Designed authentication mechanisms with API gateways and IAM solutions</li>
+          </ul>
+        </div>
+      </div>
 
-			<section id="projects">
-				<h1>Projects</h1>
-				<ul data-content="projects">
-				</ul>
-			</section>
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title" contenteditable="true">Senior Associate</div>
+            <div class="company" contenteditable="true">Cognizant Technology Solutions, Pune, IN</div>
+          </div>
+          <div class="job-date" contenteditable="true">2011 – 2014</div>
+        </div>
+        <div class="job-description">
+          <ul contenteditable="true">
+            <li>Led development of enterprise applications focusing on Java-based microservices</li>
+            <li>Designed scalable solutions for financial services clients</li>
+            <li>Conducted performance tuning and optimization for high-throughput applications</li>
+          </ul>
+        </div>
+      </div>
 
-			<section id="experience">
-				<h1>Experience</h1>
-				<ul data-content="experience">
-					
-				</ul>
-			</section>
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title" contenteditable="true">Product Engineer / Software Professional / Programmer Analyst</div>
+            <div class="company" contenteditable="true">SunGard (FIS) / Tieto / Cognizant / T-Systems</div>
+          </div>
+          <div class="job-date" contenteditable="true">2006 – 2011</div>
+        </div>
+        <div class="job-description">
+          <ul contenteditable="true">
+            <li>Developed and maintained enterprise software solutions in financial services</li>
+            <li>Gathered and analyzed requirements, created estimations for development efforts</li>
+            <li>Designed and implemented Java-based applications with SQL Server and Hibernate</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-			<section id="speaking">
-				<h1>Speaking Engagements</h1>
-				<ul data-content="speaking">
-				</ul>
-			</section>
-
-			<section id="education">
-				<h1>Education</h1>
-				<ul data-content="education">
-				</ul>
-			</section>
-		</div>
-
-		<footer>
-			Last updated on: 10-15-2012
-		</footer>
-
-		<script type="text/template" id="skills-template">
-			<li>
-				${skills}
-			</li>
-		</script>
-
-		<script type="text/template" id="frameworks-template">
-			<li>
-				${frameworks}
-			</li>
-		</script>
-
-		<script type="text/template" id="speaking-template">
-			<li>
-				<section>
-					<ul>
-						<li>
-							<div class="label">Title:</div>
-							<div class="content">${title}</div>
-						</li>
-						<li>
-							<div class="label">location:</div>
-							<div class="content">${location}</div>
-						</li>
-						<li>
-							<div class="label">Link:</div>
-							<div class="content"><a href="${link}" target="_blank">open</a></div>
-						</li>
-					</ul>
-				</section>
-			</li>
-		</script>
-
-		<script type="text/template" id="projects-template">
-			<li>
-				<section>
-					<ul>
-						<li>
-							<div class="label">Name:</div>
-							<div class="content">${name}</div>
-						</li>
-						<li>
-							<div class="label">Technologies:</div>
-							<div class="content">${technologies}</div>
-						</li>
-						<li>
-							<div class="label">Description:</div>
-							<div class="content">${description}</div>
-						</li>
-					</ul>
-				</section>
-			</li>
-		</script>
-
-		<script type="text/template" id="education-template">
-			<li>
-				<section>
-					<ul>
-						<li>
-							<div class="label">School:</div>
-							<div class="content">${school}</div>
-						</li>
-						<li>
-							<div class="label">Program:</div>
-							<div class="content">${program}</div>
-						</li>
-						<li>
-							<div class="label">Dates Attended:</div>
-							<div class="content">${startDate} - ${endDate}</div>
-						</li>
-						<li>
-							<div class="label">Achievements:</div>
-							<div class="content">${achievements}</div>
-						</li>
-					</ul>
-				</section>
-			</li>
-		</script>
-
-		<script type="text/template" id="experience-template">
-			<li>
-				<section>
-					<ul>
-                        <li>
-                            <div class="label">Company</div>
-                            <div class="content">${company}</div>
-                        </li>
-                        <li>
-                            <div class="label">Title:</div>
-                            <div class="content">${title}</div>
-                        </li>
-                        <li>
-                            <div class="label">Tenure:</div>
-                            <div class="content">${startDate} - ${endDate}</div>
-                        </li>
-                        <li>
-							<div class="label">Responsibilities:</div>
-							<div class="content">${responsibilities}</div>
-						</li>
-						<li>					
-							<div class="label">Achievements:</div>
-							<div class="content">${achievements}</div>
-						</li>
-					</ul>
-				</section>
-			</li>
-		</script>
-
-		<script type="text/template" id="social-template">
-			<li><a href="${link}" target="_blank">${name}</a></li>
-		</script>
-
-		<script type="text/javascript" src="js/jsonme.min.js"></script>
-		<script type="text/javascript">
-			snack.ready( function( ) {
-				window.app.loadData( );
-			} )
-		</script>
-	</body>
+    <section class="section">
+      <h2 class="section-title">Education, Certifications & Skills</h2>
+      <div class="three-col">
+        <div class="col">
+          <h4>Education</h4>
+          <ul contenteditable="true">
+            <li>Bachelor of Engineering</li>
+            <li>Information Technology</li>
+            <li>Pune University, IN</li>
+            <li>May 2006</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Certifications</h4>
+          <ul contenteditable="true">
+            <li>Google Cloud Professional Architect</li>
+            <li>Google Cloud Data Engineer</li>
+            <li>AWS Solutions Architect</li>
+            <li>PMP®</li>
+            <li>PRINCE2® Foundation</li>
+            <li>ITIL® 2011 Foundation</li>
+            <li>SCJP1.4® / SCWCD 5®</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Technical Skills</h4>
+          <ul contenteditable="true">
+            <li>AWS, GCP, GKE, Kubernetes</li>
+            <li>Snowflake, MongoDB, BigQuery</li>
+            <li>Java 8, SQL, PL-SQL</li>
+            <li>Terraform, Docker, Jenkins</li>
+            <li>Apache Camel, Debezium</li>
+            <li>Agile, ITIL, DevOps</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
 </html>
-
