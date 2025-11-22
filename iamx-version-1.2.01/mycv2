@@ -1,0 +1,234 @@
+<div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Template</title>
+  <style>
+    /* existing styles remain unchanged */
+    /* ... previous CSS styles here, omitted for brevity ... */
+  </style>
+</head>
+<body>
+  <script>
+    function loadPhoto(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.getElementById('profilePhoto');
+          const text = document.getElementById('photoText');
+          img.src = e.target.result;
+          img.style.display = 'block';
+          text.style.display = 'none';
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+  <div class="resume">
+    <div class="edit-hint">💡 <strong>Click any text to edit</strong> | Ctrl+P to print/save PDF | Copy & paste into Word for DOCX</div>
+
+    <header class="header">
+      <div class="header-content">
+        <div class="photo-placeholder" onclick="document.getElementById('photoInput').click()">
+          <img id="profilePhoto" src="" alt="" style="display:none; width:100%; height:100%; object-fit:cover; border-radius:5px;" />
+          <div id="photoText">📷<br />Click to<br />add photo</div>
+        </div>
+        <input type="file" id="photoInput" accept="image/*" style="display:none" onchange="loadPhoto(this)" />
+        <div class="header-text">
+          <div class="name" contenteditable="true">PARIKSHIT GALGALI</div>
+          <div class="title" contenteditable="true">Enterprise Architect | HSBC Pune, India</div>
+        </div>
+      </div>
+      <div class="contact-info">
+        <span class="contact-item" contenteditable="true"><span class="contact-icon">☎</span> 9970725987</span>
+        <span class="contact-item" contenteditable="true"><span class="contact-icon">◎</span> Pune, Maharashtra</span>
+        <span class="contact-item" contenteditable="true"><span class="contact-icon">✉</span> pgalgali@gmail.com</span>
+        <span class="contact-item" contenteditable="true"><span class="contact-icon">⚯</span> linkedin.com/in/parikshitgalgali</span>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="summary" contenteditable="true">
+        Accomplished Solution Architect with over 18 years of extensive experience in enterprise strategy, enterprise data architecture, and solution design. Demonstrated expertise in designing and delivering cost-effective, high-performance IT infrastructures and applications across domains including Commercial and Investment Banking, Telecom, Manufacturing, Logistics, and Retail. Proven track record in managing large global teams, P&L responsibility, and driving Cloud modernization, Kubernetes adoption, and microservices architecture.
+      </div>
+
+      <section class="section">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="competencies-grid">
+          <div class="competency-item" contenteditable="true"><strong>Enterprise Architecture:</strong> Scalable, resilient architectures, cloud modernization, microservices, Kubernetes, vendor tool evaluation</div>
+          <div class="competency-item" contenteditable="true"><strong>Data Architecture & Integration:</strong> Data lakes, ETL, Snowflake, MongoDB, Debezium, Camunda, Apache Camel</div>
+          <div class="competency-item" contenteditable="true"><strong>Cloud Platforms & DevOps:</strong> AWS, GCP, GKE, Cloud Foundry (PCF), Docker, Terraform, Jenkins</div>
+          <div class="competency-item" contenteditable="true"><strong>API & Microservices:</strong> API management, Spring Boot, Kubernetes-based deployments, Open Banking API, consent management</div>
+          <div class="competency-item" contenteditable="true"><strong>Leadership & Management:</strong> Leading global teams, mentoring engineers, stakeholder engagement, P&L management</div>
+          <div class="competency-item" contenteditable="true"><strong>Security & Compliance:</strong> Identity and access management, JWT authentication, risk management in banking sector</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title-row">
+                <div class="job-title" contenteditable="true">Lead Solutions Architect</div>
+                <div class="job-date" contenteditable="true">2018 – Present</div>
+              </div>
+              <div class="company" contenteditable="true">HSBC, Pune, India</div>
+            </div>
+            <div class="job-description">
+              <ul contenteditable="true">
+                <li>Architected multiple large-scale transformation projects migrating legacy enterprise systems to cloud-native platforms with Kubernetes and MongoDB.</li>
+                <li>Designed MongoDB-based CQRS patterns enabling high availability and low-latency data access for banking applications.</li>
+                <li>Conducted technical due diligence for investments and partnerships to ensure adherence to industry standards and technologies.</li>
+                <li>Evaluated and implemented ETL workflows, Change Data Capture (CDC) solutions using Debezium, and workflow orchestration tools such as Camunda.</li>
+                <li>Defined cloud strategies and roadmaps ensuring scalability, resilience, and security on GKE and AWS platforms.</li>
+                <li>Led risk management initiatives with a focus on security compliance in banking environments.</li>
+                <li>Mentored cross-functional teams including cloud architects, developers, and data engineers on best practices.</li>
+                <li>Designed enterprise data lake solutions for efficient management of structured and unstructured data.</li>
+                <li>Spearheaded Open Banking API implementation emphasizing consent management and transactional security.</li>
+                <li>Delivered API-driven payment channel solutions integrating diverse banking services for enhanced reliability.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title-row">
+                <div class="job-title" contenteditable="true">Applications Architect</div>
+                <div class="job-date" contenteditable="true">2016 – 2018</div>
+              </div>
+              <div class="company" contenteditable="true">Cognizant Technology Solutions, Pune / Munich</div>
+            </div>
+            <div class="job-description">
+              <ul contenteditable="true">
+                <li>Designed and implemented scalable microservices using Spring Boot, Apache Camel, and Kubernetes.</li>
+                <li>Led design of cloud-native data solutions and APIs focusing on high performance and scalability.</li>
+                <li>Collaborated with client teams for requirement gathering and translating business needs into technical solutions.</li>
+                <li>Supported business development efforts including RFP contributions and client engagement.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title-row">
+                <div class="job-title" contenteditable="true">Senior Consultant</div>
+                <div class="job-date" contenteditable="true">2014 – 2016</div>
+              </div>
+              <div class="company" contenteditable="true">Capgemini, Pune | Client: Barclays (Finance)</div>
+            </div>
+            <div class="job-description">
+              <ul contenteditable="true">
+                <li>Provided technical leadership and architectural designs for enterprise applications and data solutions.</li>
+                <li>Led migration of legacy systems to cloud ensuring performance optimization, cost effectiveness, and enhanced security.</li>
+                <li>Implemented REST-based JWT token authentication and integrated identity and access management (IAM) solutions including ForgeRock and Mule Gateway.</li>
+                <li>Delivered end-to-end enterprise integration solutions including real-time data pipelines and processing.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title-row">
+                <div class="job-title" contenteditable="true">Senior Associate</div>
+                <div class="job-date" contenteditable="true">2011 – 2014</div>
+              </div>
+              <div class="company" contenteditable="true">Cognizant Technology Solutions, Pune</div>
+            </div>
+            <div class="job-description">
+              <ul contenteditable="true">
+                <li>Led development of Java-based microservices and API integrations focusing on financial services.</li>
+                <li>Conducted performance tuning and optimization for high-throughput transactional applications.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title-row">
+                <div class="job-title" contenteditable="true">Product Engineer / Software Professional</div>
+                <div class="job-date" contenteditable="true">2006 – 2011</div>
+              </div>
+              <div class="company" contenteditable="true">SunGard (FIS) | Tieto | Cognizant | T-Systems</div>
+            </div>
+            <div class="job-description">
+              <ul contenteditable="true">
+                <li>Developed enterprise software solutions for the financial services domain using Java, SQL Server, and Hibernate.</li>
+                <li>Designed Swing-based UI components and performed regular application maintenance and defect resolution.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="bottom-section">
+      <div class="grid-container">
+        <div class="grid-box">
+          <h4>Education</h4>
+          <div class="edu-item" contenteditable="true">
+            <div class="edu-degree">Bachelor of Engineering</div>
+            <div class="edu-school">Information Technology</div>
+            <div class="edu-school">Pune University, India</div>
+            <div class="edu-year">May 2006</div>
+          </div>
+        </div>
+
+        <div class="grid-box">
+          <h4>Certifications</h4>
+          <div class="cert-grid" contenteditable="true">
+            <div class="cert-item">Google Cloud Certified Professional Architect</div>
+            <div class="cert-item">Google Cloud Professional Data Engineer</div>
+            <div class="cert-item">AWS Certified Solutions Architect</div>
+            <div class="cert-item">PMP® (Project Management Professional)</div>
+            <div class="cert-item">PRINCE2® Foundation</div>
+            <div class="cert-item">ITIL® 2011 Foundation</div>
+            <div class="cert-item">SCJP 1.4® (Sun Certified Java Programmer)</div>
+            <div class="cert-item">SCWCD 5® (Sun Certified Web Component Developer)</div>
+          </div>
+        </div>
+
+        <div class="grid-box">
+          <h4>Technical Skills</h4>
+          <div class="skill-category">
+            <div class="skill-label">Cloud & DevOps</div>
+            <div class="skill-tags" contenteditable="true">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">GCP</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">Jenkins</span>
+              <span class="skill-tag">Cloud Foundry (PCF)</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-label">Data & Databases</div>
+            <div class="skill-tags" contenteditable="true">
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Snowflake</span>
+              <span class="skill-tag">BigQuery</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Debezium</span>
+              <span class="skill-tag">Apache Camel</span>
+              <span class="skill-tag">Camunda</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-label">Languages & Tools</div>
+            <div class="skill-tags" contenteditable="true">
+              <span class="skill-tag">Java 8</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">PL-SQL</span>
+              <span class="skill-tag">HTML</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+</div>
