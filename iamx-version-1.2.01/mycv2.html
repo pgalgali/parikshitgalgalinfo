@@ -6,33 +6,402 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume Template</title>
   <style>
-    /* existing styles remain unchanged */
-    /* ... previous CSS styles here, omitted for brevity ... */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 11pt;
+      line-height: 1.4;
+      color: #222;
+      background: #f0f8ff; /* Alice Blue background for light skyblue tint */
+      padding: 20px;
+    }
+    .resume {
+      max-width: 880px;
+      margin: 0 auto;
+      background: white;
+      padding: 0;
+      box-shadow: 0 6px 25px rgba(255, 165, 79, 0.3); /* Orange tinted shadow */
+      border-radius: 10px;
+      border-top: 8px solid #0284c7; /* strong skyblue top border */
+    }
+    .header {
+      background: linear-gradient(135deg, #0ea5e9 15%, #f59e0b 65%, #dc2626 100%);
+      color: white;
+      padding: 35px 45px;
+      position: relative;
+      border-radius: 10px 10px 0 0;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #3b82f6 0%, #fbbf24 50%, #ef4444 100%);
+      border-radius: 0 0 10px 10px;
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 25px;
+    }
+    .photo-placeholder {
+      width: 115px;
+      height: 135px;
+      border: 3px solid rgba(255, 255, 255, 0.7);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 9pt;
+      text-align: center;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .photo-placeholder:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: #fde68a;
+      color: #fde68a;
+    }
+    .header-text {
+      flex-grow: 1;
+    }
+    .name {
+      font-size: 34pt;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      margin-bottom: 6px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+      color: #fbbf24; /* Yellow gold */
+    }
+    .title {
+      font-size: 12.5pt;
+      color: #f97316; /* Orange */
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      font-size: 10.5pt;
+      color: rgba(255, 255, 255, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 18px;
+      font-weight: 600;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: text;
+      color: #fde68a;
+    }
+    .contact-icon {
+      font-size: 14pt;
+      color: #fde68a; /* Yellow icon */
+    }
+    .main-content {
+      padding: 35px 45px;
+    }
+    .summary {
+      color: #444;
+      text-align: justify;
+      margin-bottom: 35px;
+      padding: 22px;
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+      border-left: 6px solid #0ea5e9;
+      font-size: 11pt;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 3px 4px 8px rgba(14, 165, 233, 0.15);
+    }
+    .section {
+      margin-bottom: 36px;
+    }
+    .section-title {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #0284c7; /* Bright sky blue */
+      text-transform: uppercase;
+      letter-spacing: 3.5px;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      border-bottom: 4px solid #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+    }
+    .section-title::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: #f59e0b; /* Orange-Yellow */
+      border-radius: 50%;
+      box-shadow: 0 0 6px #dc2626; /* Red glow */
+    }
+    .competencies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+    }
+    .competency-item {
+      padding: 16px 20px;
+      background: #fffae5;
+      border-left: 6px solid #f59e0b;
+      font-size: 11pt;
+      font-weight: 600;
+      border-radius: 0 10px 10px 0;
+      color: #b45309; /* darker orange */
+      box-shadow: 2px 4px 12px rgba(251, 191, 36, 0.2);
+      transition: all 0.3s ease;
+    }
+    .competency-item:hover {
+      background: #fef3c7;
+      border-color: #dc2626; /* bright red */
+      color: #991b1b;
+      box-shadow: 2px 6px 16px rgba(220, 38, 38, 0.35);
+      cursor: default;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 6px;
+      bottom: 6px;
+      width: 5px;
+      background: linear-gradient(180deg, #0284c7 0%, #fbbf24 50%, #dc2626 100%);
+      border-radius: 5px;
+      box-shadow: 0 0 8px rgba(255, 165, 79, 0.6);
+    }
+    .job {
+      margin-bottom: 30px;
+      position: relative;
+      transition: transform 0.3s ease;
+      border-radius: 8px;
+      padding: 20px 25px;
+      background: #fef9f1;
+      box-shadow: 0 2px 10px rgba(251, 191, 36, 0.15);
+    }
+    .job:hover {
+      background: #fff7cc;
+      box-shadow: 0 8px 22px rgba(251, 191, 36, 0.4);
+      transform: translateX(4px);
+    }
+    .job::before {
+      content: '';
+      position: absolute;
+      left: -37px;
+      top: 16px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      border: 5px solid #0284c7;
+      box-shadow: 0 3px 8px rgba(0, 132, 199, 0.45);
+      transition: border-color 0.3s ease;
+    }
+    .job:nth-child(2)::before { border-color: #22c55e; box-shadow: 0 3px 8px #22c55e88; }
+    .job:nth-child(3)::before { border-color: #fbbf24; box-shadow: 0 3px 8px #fbbf2488; }
+    .job:nth-child(4)::before { border-color: #f97316; box-shadow: 0 3px 8px #f9731688; }
+    .job:nth-child(5)::before { border-color: #dc2626; box-shadow: 0 3px 8px #dc262688; }
+    .job-header {
+      margin-bottom: 14px;
+    }
+    .job-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .job-title {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      text-shadow: 1px 1px 2px rgba(251, 191, 36, 0.45);
+    }
+    .job-date {
+      font-size: 10.5pt;
+      color: #ffffff;
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      padding: 6px 16px;
+      border-radius: 25px;
+      white-space: nowrap;
+      font-weight: 700;
+      box-shadow: 0 3px 10px rgba(220, 38, 38, 0.45);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    .company {
+      font-size: 11pt;
+      color: #0ea5e9;
+      margin-top: 4px;
+      font-weight: 600;
+      text-shadow: 1px 1px 1px rgba(0, 132, 233, 0.3);
+    }
+    .job-description ul {
+      margin-left: 22px;
+      color: #444444;
+      font-size: 10.5pt;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .job-description li {
+      margin-bottom: 8px;
+    }
+    .bottom-section {
+      background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+      padding: 35px 45px;
+      border-top: 7px solid #fbbf24;
+      border-radius: 0 0 10px 10px;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .grid-box {
+      background: white;
+      padding: 24px 28px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      border-top: 6px solid #0ea5e9;
+      transition: border-color 0.3s ease;
+    }
+    .grid-box:nth-child(2) { border-top-color: #fbbf24; }
+    .grid-box:nth-child(3) { border-top-color: #dc2626; }
+    .grid-box:hover { box-shadow: 0 8px 30px rgba(255, 165, 79, 0.3); }
+    .grid-box h4 {
+      font-size: 11pt;
+      color: #0ea5e9;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed #e5e7eb;
+      text-shadow: 1px 1px 1px rgba(0, 132, 233, 0.15);
+    }
+    .grid-box:nth-child(2) h4 { color: #b45309; }
+    .grid-box:nth-child(3) h4 { color: #dc2626; }
+    .edu-item {
+      margin-bottom: 14px;
+    }
+    .edu-degree {
+      font-weight: 700;
+      color: #1a1a1a;
+      font-size: 11pt;
+    }
+    .edu-school {
+      color: #666666;
+      font-size: 10.2pt;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .edu-year {
+      color: #0ea5e9;
+      font-size: 9pt;
+      margin-top: 8px;
+      font-weight: 700;
+    }
+    .cert-grid {
+      display: grid;
+      gap: 10px;
+    }
+    .cert-item {
+      padding: 10px 14px;
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      font-size: 10pt;
+      border-left: 5px solid #fbbf24;
+      border-radius: 0 6px 6px 0;
+      font-weight: 600;
+      color: #92400e;
+      box-shadow: 1px 1px 2px rgba(251, 191, 36, 0.4);
+      transition: all 0.3s ease;
+    }
+    .cert-item:hover {
+      background: #fef9c3;
+      border-color: #dc2626;
+      color: #b91c1c;
+      box-shadow: 2px 2px 6px rgba(220, 38, 38, 0.5);
+      cursor: default;
+    }
+    .skill-category {
+      margin-bottom: 15px;
+    }
+    .skill-label {
+      font-size: 9.5pt;
+      color: #888888;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      color: white;
+      padding: 6px 14px;
+      font-size: 9pt;
+      border-radius: 15px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(220, 38, 38, 0.5);
+      user-select: none;
+      transition: all 0.3s ease;
+    }
+    .skill-category:nth-child(2) .skill-tag {
+      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      box-shadow: 0 2px 8px rgba(14, 165, 233, 0.7);
+    }
+    .skill-category:nth-child(3) .skill-tag {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      color: #1a1a1a;
+      box-shadow: 0 2px 8px rgba(251, 191, 36, 0.7);
+    }
+    [contenteditable]:focus {
+      outline: 3px dashed #0284c7;
+      outline-offset: 3px;
+      background: #e0f2fe;
+      transition: background 0.15s ease;
+    }
+    .edit-hint {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      padding: 12px 16px;
+      font-size: 11pt;
+      color: #92400e;
+      text-align: center;
+      border-bottom: 3px solid #fbbf24;
+      font-weight: 600;
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .resume { box-shadow: none; }
+      .edit-hint { display: none; }
+      #photoText { display: none; }
+    }
   </style>
 </head>
 <body>
-  <script>
-    function loadPhoto(input) {
-      if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const img = document.getElementById('profilePhoto');
-          const text = document.getElementById('photoText');
-          img.src = e.target.result;
-          img.style.display = 'block';
-          text.style.display = 'none';
-        };
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
-  </script>
   <div class="resume">
     <div class="edit-hint">💡 <strong>Click any text to edit</strong> | Ctrl+P to print/save PDF | Copy & paste into Word for DOCX</div>
 
     <header class="header">
       <div class="header-content">
         <div class="photo-placeholder" onclick="document.getElementById('photoInput').click()">
-          <img id="profilePhoto" src="" alt="" style="display:none; width:100%; height:100%; object-fit:cover; border-radius:5px;" />
+          <img id="profilePhoto" src="" alt="" style="display:none; width:100%; height:100%; object-fit:cover; border-radius:12px;" />
           <div id="photoText">📷<br />Click to<br />add photo</div>
         </div>
         <input type="file" id="photoInput" accept="image/*" style="display:none" onchange="loadPhoto(this)" />
